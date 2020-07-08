@@ -1,9 +1,13 @@
-Feature: Login with valid data
+# language: ru
+@fast
+Функционал: Регистрация пользователя с валидными данными
+
+  Предыстория:
+    Допустим Я нахожусь на главной странице сайта
 
   @ValidLogin
-  Scenario: I should register on the site with valid data and make sure that the Payments Tab is displayed
+  Сценарий: Я должен зарегистрироваться на сайте и убедиться, что отображается профайл пользователя
 
-    Given I am on the homepage click Login button
-    When I type a valid username and password
-    Then I should see the Payment Tab
-
+    Дано Я нажимаю кнопку входа в аккаунт
+    Когда Я ввожу валидные логин и пароль
+    Затем Я должен увидеть профайл пользователя
