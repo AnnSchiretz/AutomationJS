@@ -35,10 +35,14 @@ exports.config = {
     // WebdriverIO allows it to run your tests in arbitrary locations (e.g. locally or
     // on a remote machine).
     runner: 'local',
+    hostname: "localhost",
+    port: 4444,
+    path: "/wd/hub",
+
     //
     // ==================
     // Specify Test Files
-    // ==================
+    // ==================v
     // Define which test specs should run. The pattern is relative to the directory
     // from which `wdio` was called. Notice that, if you are calling `wdio` from an
     // NPM script (see https://docs.npmjs.com/cli/run-script) then the current working
@@ -81,6 +85,13 @@ exports.config = {
         maxInstances: 5,
         //
         browserName: 'chrome',
+        browserVersion: '83.0',
+        'selenoid:options': {
+            enableVNC: true,
+            enableVideo: true,
+            screenResolution: "1600x900"
+        }
+
         // If outputDir is provided WebdriverIO can capture driver session logs
         // it is possible to configure which logTypes to include/exclude.
         // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
@@ -94,6 +105,7 @@ exports.config = {
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
     logLevel: 'silent',
+    debug: true,
     //
     // Set specific log levels per logger
     // loggers:
@@ -157,7 +169,7 @@ exports.config = {
 
         ['cucumberjs-json', {
             jsonFolder: jsonTmpDirectory,
-            language: 'en',
+            language: 'ru',
         }]
     ],
 
@@ -176,7 +188,7 @@ exports.config = {
         profile: [],        // <string[]> (name) specify the profile to use
         strict: false,      // <boolean> fail if there are any undefined or pending steps
         tagExpression: '',  // <string> (expression) only execute the features or scenarios with tags matching the expression
-        timeout: 60000,     // <number> timeout for step definitions
+        timeout: 40000,     // <number> timeout for step definitions
         ignoreUndefinedDefinitions: false, // <boolean> Enable this config to treat undefined definitions as warnings.
     },
 
@@ -341,4 +353,4 @@ exports.config = {
     */
     //onReload: function(oldSessionId, newSessionId) {
     //}
-}
+};
