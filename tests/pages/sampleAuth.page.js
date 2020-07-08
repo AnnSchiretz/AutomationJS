@@ -9,6 +9,7 @@ class sampleAuthPage extends NativePage {
 
     openHomePage() {
         browser.url(homePageData['mainURL']);
+
     }
 
     openLoginForm() {
@@ -16,10 +17,6 @@ class sampleAuthPage extends NativePage {
         loginButton.click();
 
     }
-
-    // waitInputDisplay() {
-    //     this.authPageElement.emailInput.waitForDisplayed({timeout: 10000});
-    // }
 
 
     loginWithValidData() {
@@ -35,14 +32,16 @@ class sampleAuthPage extends NativePage {
         const submitButton = $(this.authPageElement.submitButton);
         submitButton.click();
 
+
     }
 
-    paymentTabIsDisplayed() {
 
-        const paymentTab = $(this.authPageElement.paymentTab);
-        paymentTab.waitForDisplayed();
+    profileTabIsDisplayed() {
 
-        return paymentTab.isDisplayed();
+        const profile = $(this.authPageElement.profile);
+        profile.waitForDisplayed();
+
+        return profile.isDisplayed();
     }
 
 
