@@ -1,21 +1,26 @@
-const { Given, When, Then } = require('cucumber');
+const {Given, When, Then} = require('cucumber');
 const assert = require('assert').strict;
 
 const AuthPage = require('../../pages/sampleAuth.page.js');
 const auth = new AuthPage();
 
 
-Given(/^I am on the homepage click Login button$/, () => {
-    auth.openHomePage();
+Given(/^Я нажимаю кнопку входа в аккаунт$/, () => {
+
     auth.openLoginForm();
+
 });
 
-When(/^I type a valid username and password$/, () => {
+When(/^Я ввожу валидные логин и пароль$/, () => {
     auth.loginWithValidData();
 });
 
 
-Then(/^I should see the Payment Tab$/, () => {
-    // auth.paymentTabIsDisplayed();
-    assert.strictEqual(auth.paymentTabIsDisplayed(),true, "Payment Tab is not displayed");
+Then(/^Я должен увидеть профайл пользователя$/, () => {
+    auth.profileTabIsDisplayed();
+    assert.strictEqual(auth.profileTabIsDisplayed(), true, "Профайл пользователя не отображается");
+
+});
+Given(/^Я нахожусь на главной странице сайта$/, function () {
+    auth.openHomePage();
 });
