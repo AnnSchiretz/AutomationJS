@@ -34,3 +34,50 @@ wdio wdio.conf.js
 npm run test -- --cucumberOpts.tagExpression='not @fast and smoke'
 
 запустит тесты с тэгом smoke и исключит из списка запуска тесты с тэгом fast
+
+
+**Настройка selenoid**
+
+1. Установить Docker на PC
+https://www.docker.com/products/docker-desktop
+2. Мануал по установке selenoid:
+
+https://aerokube.com/selenoid/latest/
+
+3. Запустить selenoid можно одной командой:
+curl -s https://aerokube.com/cm/bash | bash \
+    && ./cm selenoid start --vnc --tmpfs 128
+4.  Либо скачать Configuration Manager (https://github.com/aerokube/cm/releases/tag/1.7.2)
+5. Команда для запуска selenoid%
+
+./cm selenoid start --vnc
+
+6. При желании запустите еще одну команду для запуска Selenoid UI:
+
+./cm selenoid-ui start
+
+7. Чтобы открыть Selenoid UI, перейдите на следующую страницу в браузере:
+
+http://localhost:8080/#/
+
+8. В файле wdio.conf.js добавить строки:
+
+
+     exports.config = {
+      hostname: "localhost",
+      port: 4444,
+      path: "/wd/hub",
+  
+             capabilities: [{
+             browserVersion: '83.0',
+            'selenoid:options': {
+                enableVNC: true,
+                enableVideo: true,
+                screenResolution: "1600x900"
+            }
+    }]
+    }
+    
+   
+    
+    
