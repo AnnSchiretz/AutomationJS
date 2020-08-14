@@ -1,7 +1,8 @@
 const fs = require('fs');
 const argv = require("yargs").argv;
 const wdioParallel = require('wdio-cucumber-parallel-execution');
-const { removeSync } = require('fs-extra');
+const {removeSync} = require('fs-extra');
+
 
 // The below module is used for cucumber html report generation
 const reporter = require('cucumber-html-reporter');
@@ -10,20 +11,7 @@ const sourceSpecDirectory = `tests/features/featureFiles`;
 const jsonTmpDirectory = `tests/reports/json/tmp/`;
 
 
-let featureFilePath = `${sourceSpecDirectory}/*.feature`;
-
-// If parallel execution is set to true, then create the Split the feature files
-// And store then in a tmp spec directory (created inside `the source spec directory)
-if (argv.parallel === 'true') {
-
-    tmpSpecDirectory = `${sourceSpecDirectory}/tmp`;
-    wdioParallel.performSetup({
-        sourceSpecDirectory: sourceSpecDirectory,
-        tmpSpecDirectory: tmpSpecDirectory,
-        cleanTmpSpecDirectory: true
-    });
-    featureFilePath = `${tmpSpecDirectory}/*.feature`;
-}
+let featureFilePath = `${sourceSpecDirectory}/*/*.feature`;
 
 
 exports.config = {
@@ -35,7 +23,9 @@ exports.config = {
     // WebdriverIO allows it to run your tests in arbitrary locations (e.g. locally or
     // on a remote machine).
     runner: 'local',
+    // hostname: "192.168.150.222",//Сервер
     hostname: "localhost",
+    baseURL: process.env.URL,
     port: 4444,
     path: "/wd/hub",
 
@@ -84,12 +74,23 @@ exports.config = {
         // 5 instances get started at a time.
         maxInstances: 5,
         //
+
         browserName: 'chrome',
-        browserVersion: '83.0',
+        browserVersion: '84.0',
+        'goog:chromeOptions': {
+            args: [
+                '--no-sandbox',
+                '--disable-dev-shm-usage',
+                // '--auto-open-devtools-for-tabs',
+                '--incognito',
+                '--disable-setuid-sandbox',
+                '--start-maximized',
+
+            ],
+        },
         'selenoid:options': {
             enableVNC: true,
-            enableVideo: true,
-            screenResolution: "1600x900"
+            enableVideo: false
         }
 
         // If outputDir is provided WebdriverIO can capture driver session logs
@@ -129,14 +130,13 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'http://localhost',
     //
     // Default timeout for all waitFor* commands.
-    waitforTimeout: 10000,
+    waitforTimeout: 30000,
     //
     // Default timeout in milliseconds for request
     // if browser driver or grid doesn't send response
-    connectionRetryTimeout: 90000,
+    connectionRetryTimeout: 50000,
     //
     // Default request retries count
     connectionRetryCount: 3,
@@ -145,7 +145,8 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['selenium-standalone'],
+    services: [],
+//, 'selenium-standalone'
 
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
@@ -177,7 +178,7 @@ exports.config = {
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
         require: ['./tests/features/step_definitions/*.js', './tests/features/support/*.js'],        // <string[]> (file/dir) require files before executing features
-        backtrace: false,   // <boolean> show full backtrace for errors
+        backtrace: true,   // <boolean> show full backtrace for errors
         requireModule: [],  // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
         dryRun: false,      // <boolean> invoke formatters without executing steps
         failFast: false,    // <boolean> abort the run on first failure
@@ -188,7 +189,7 @@ exports.config = {
         profile: [],        // <string[]> (name) specify the profile to use
         strict: false,      // <boolean> fail if there are any undefined or pending steps
         tagExpression: '',  // <string> (expression) only execute the features or scenarios with tags matching the expression
-        timeout: 40000,     // <number> timeout for step definitions
+        timeout: 30000,     // <number> timeout for step definitions
         ignoreUndefinedDefinitions: false, // <boolean> Enable this config to treat undefined definitions as warnings.
     },
 
@@ -209,7 +210,7 @@ exports.config = {
     onPrepare: () => {
         // Remove the `tmp/` folder that holds the json report files
         removeSync(jsonTmpDirectory);
-        if (!fs.existsSync(jsonTmpDirectory)){
+        if (!fs.existsSync(jsonTmpDirectory)) {
             fs.mkdirSync(jsonTmpDirectory);
         }
 
@@ -282,12 +283,12 @@ exports.config = {
      * Hook that gets executed before the suite starts
      * @param {Object} suite suite details
      */
-    // beforeSuite: function (suite) {
+    // beforeSuite: (suite) => {
     // },
     /**
      * Function to be executed before a test (in Mocha/Jasmine) starts.
      */
-    // beforeTest: function (test, context) {
+    // beforeTest:  (test, context) => {
     // },
     /**
      * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
@@ -350,7 +351,7 @@ exports.config = {
      */
     onComplete: () => {
 
-        try{
+        try {
             let consolidatedJsonArray = wdioParallel.getConsolidatedData({
                 parallelExecutionReportDirectory: jsonTmpDirectory
             });
@@ -358,28 +359,31 @@ exports.config = {
             let jsonFile = `${jsonTmpDirectory}report.json`;
             fs.writeFileSync(jsonFile, JSON.stringify(consolidatedJsonArray));
 
-            var options = {
+            const options = {
                 theme: 'bootstrap',
                 jsonFile: jsonFile,
                 output: `tests/reports/html/report-${currentTime}.html`,
                 reportSuiteAsScenarios: true,
                 scenarioTimestamp: true,
                 launchReport: true,
-                ignoreBadJsonFile: true
+                ignoreBadJsonFile: true,
+
             };
 
             reporter.generate(options);
-        } catch(err){
+        } catch (err) {
             console.log('err', err);
         }
 
 
     }
     /**
-    * Gets executed when a refresh happens.
-    * @param {String} oldSessionId session ID of the old session
-    * @param {String} newSessionId session ID of the new session
-    */
+     * Gets executed when a refresh happens.
+     * @param {String} oldSessionId session ID of the old session
+     * @param {String} newSessionId session ID of the new session
+     */
     //onReload: function(oldSessionId, newSessionId) {
     //}
+
+
 };
