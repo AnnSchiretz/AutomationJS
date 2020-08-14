@@ -70,13 +70,17 @@ http://localhost:8080/#/
   
              capabilities: [{
              browserVersion: '83.0',
-            'selenoid:options': {
-                enableVNC: true,
-                enableVideo: true,
-                screenResolution: "1600x900"
-            }
-    }]
-    }
+            'goog:chromeOptions': {
+                        args: [
+                            '--window-size=1920,1080',
+                            '--no-sandbox',
+                            '--disable-dev-shm-usage'
+                        ],
+                    },
+                    'selenoid:options': {
+                        enableVNC: true,
+                        enableVideo: false
+                    }
     
    
     
