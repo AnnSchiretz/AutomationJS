@@ -240,8 +240,37 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
-    // before: function (capabilities, specs) {
-    // },
+    before: (capabilities, specs) => {
+        browser.pageObjects = {
+            'Главная страница': require('./tests/pages/mainPage'),
+
+        };
+
+
+        browser.elementManager = require('./tests/services/elementManager');
+
+        browser.headers = {
+            'ROX': require('./tests/pages/blocks/header/headerROX'),
+            'JET': require('./tests/pages/blocks/header/headerJET'),
+            'FRESH': require('./tests/pages/blocks/header/headerFRESH'),
+            'VULCAN': require('./tests/pages/blocks/header/headerVULCAN'),
+            'SOL': require('./tests/pages/blocks/header/headerSOL')
+
+
+        };
+
+        browser.sidebars = {
+            'ROX': require('./tests/pages/blocks/sidebars/sidebarROX'),
+            'JET': require('./tests/pages/blocks/sidebars/sidebarJET'),
+            'FRESH': require('./tests/pages/blocks/sidebars/sidebarFRESH'),
+            'SOL': require('./tests/pages/blocks/sidebars/sidebarSOL')
+
+
+        };
+
+
+
+    },
     /**
      * Runs before a WebdriverIO command gets executed.
      * @param {String} commandName hook command name
