@@ -241,7 +241,7 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
-    before: (capabilities, specs) => {
+    before: function (capabilities, specs) {
         browser.pageObjects = {
             'Главная страница': require('./tests/pages/mainPage'),
 
