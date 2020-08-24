@@ -4,7 +4,8 @@
   "description": "A WebdriverIO & Cucumber Boilerplate based on Page Object Model",
   "scripts": {
     "chrome": "npx wdio wdio.conf.js --parallel=false",
-    "firefox": "npx wdio ./tests/config/firefox.conf.js"
+    "firefox": "npx wdio ./tests/config/firefox.conf.js",
+    "debag":"PROJECT='JET'  URL='https://jet.casino/'  npm run chrome -- --cucumberOpts.tagExpression='@TEST_TST-5017'\n"
   },
   "keywords": [
     "webdriverio",
