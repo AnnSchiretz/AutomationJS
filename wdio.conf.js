@@ -25,7 +25,7 @@ exports.config = {
     runner: 'local',
     // hostname: "192.168.150.222",//Сервер
     hostname: "localhost",
-    baseURL: process.env.URL,
+    baseURL:'',
     port: 4444,
     path: "/wd/hub",
 
