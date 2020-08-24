@@ -3,14 +3,14 @@ class sidebarSOL {
 
     constructor() {
         this.elements = {
-            'test': this.test,
+            'Профиль':  this.profileButton,
         }
     }
 
-    get test() {
-        return ('[data-test="sport"]');
-
+    get profileButton() {
+        return ('[data-test="my_profile"]');
     }
+
 
 }
 
