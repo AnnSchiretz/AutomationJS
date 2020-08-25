@@ -25,7 +25,7 @@ exports.config = {
     runner: 'local',
     // hostname: "192.168.150.222",//Сервер
     hostname: "localhost",
-    baseURL: process.env.URL,
+    baseURL:'',
     port: 4444,
     path: "/wd/hub",
 
@@ -105,7 +105,7 @@ exports.config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'silent',
+    logLevel: 'warn',
     debug: true,
     //
     // Set specific log levels per logger
@@ -241,34 +241,39 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
-    before: function (capabilities, specs) {
+    before:  (capabilities, specs) => {
         browser.pageObjects = {
-            'Главная страница': require('./tests/pages/mainPage'),
+            'Главная страница': require('./tests/pageObject/mainPage'),
+            'Форма Регистрации/Авторизации': require('./tests/pageObject/pages/registrationAuthorizationPage/registrationAuthorizationForm'),
+            'Форма Дорегистрации': require('./tests/pageObject/pages/registrationAuthorizationPage/afterRegistrationForm'),
+            'Уведомления': require('./tests/pageObject/pages/alerts/alert'),
+            'Страница Профиль Пользователя': require('./tests/pageObject/pages/userProfile/userProfilePage'),
+            'Форма Депозита': require('./tests/pageObject/pages/deposit/depositForm'),
+            'Страница редактирования профиля': require('./tests/pageObject/pages/userProfile/editUserProfilePage')
 
         };
 
-
-        browser.elementManager = require('./tests/services/elementManager');
-
         browser.headers = {
-            'ROX': require('./tests/pages/blocks/header/headerROX'),
-            'JET': require('./tests/pages/blocks/header/headerJET'),
-            'FRESH': require('./tests/pages/blocks/header/headerFRESH'),
-            'VULCAN': require('./tests/pages/blocks/header/headerVULCAN'),
-            'SOL': require('./tests/pages/blocks/header/headerSOL')
+            'ROX': require('./tests/pageObject/blocks/header/headerROX'),
+            'JET': require('./tests/pageObject/blocks/header/headerJET'),
+            'FRESH': require('./tests/pageObject/blocks/header/headerFRESH'),
+            'VULCAN': require('./tests/pageObject/blocks/header/headerVULCAN'),
+            'SOL': require('./tests/pageObject/blocks/header/headerSOL')
 
 
         };
 
         browser.sidebars = {
-            'ROX': require('./tests/pages/blocks/sidebars/sidebarROX'),
-            'JET': require('./tests/pages/blocks/sidebars/sidebarJET'),
-            'FRESH': require('./tests/pages/blocks/sidebars/sidebarFRESH'),
-            'SOL': require('./tests/pages/blocks/sidebars/sidebarSOL')
+            'ROX': require('./tests/pageObject/blocks/sidebar/sidebarROX'),
+            'JET': require('./tests/pageObject/blocks/sidebar/sidebarJET'),
+            'FRESH': require('./tests/pageObject/blocks/sidebar/sidebarFRESH'),
+            'SOL': require('./tests/pageObject/blocks/sidebar/sidebarSOL')
 
 
         };
 
+        browser.elementManager = require('./tests/services/elementManager');
+        browser.helper = require('./tests/helper/helper');
 
 
     },

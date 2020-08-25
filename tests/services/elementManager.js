@@ -3,6 +3,7 @@ class ElementManager {
 
     click(selector, ms=15000) {
         this.waitForClickable(selector, ms);
+        this.waitForDisplayed(selector, ms)
         const element = this.getElement(selector);
         return element.click();
     }
@@ -24,6 +25,12 @@ class ElementManager {
         const element = $(selector);
         this.waitForElement(selector);
         return element.getValue();
+    }
+
+    getAttribute(selector, attributeName) {
+        const element = $(selector);
+        this.waitForElement(selector);
+        return element.getAttribute(attributeName);
     }
 
 
@@ -50,13 +57,16 @@ class ElementManager {
     isDisplayed(selector, ms=15000) {
         const element = $(selector);
         this.waitForElement(selector, ms);
+        this.waitForClickable(selector,ms)
         return element.isDisplayed();
     }
 
 
-    isClickable(selector) {
-        const element = this.getElement(selector);
-        element.isClickable();
+    isClickable(selector, ms=15000) {
+        const element = $(selector);
+        this.waitForElement(selector, ms);
+        this.waitForClickable(selector, ms)
+        return element.isClickable();
     }
 
 
