@@ -12,7 +12,9 @@ module.exports = {
     'Регистрация Yandex': (process.env.URL+"users/auth/yandex"),
     'Регистрация Google+': (process.env.URL+"users/auth/google_oauth2"),
     'Регистрация Telegram': (process.env.URL+"users/auth/tlgrm"),
-
+    'Имя': 'AutoTestName_'+browser.helper.randomNumber,
+    'Фамилия': 'AutoTestLastName_' +browser.helper.randomNumber,
+    'Телефон': browser.helper.randomPhoneNumber,
 
     //SOL
     'Правильный тайтл SOL Sport': "Сол Казино (Sol Casino) официальный сайт c бонусом за регистрацию",
