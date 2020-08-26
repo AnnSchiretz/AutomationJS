@@ -6,13 +6,17 @@ class AfterRegistrationForm {
             'Поле Имя': this.nameField,
             'Поле Фамилия': this.lastNameField,
             'Поле Телефон': this.phoneNumber,
+            'Пол Мужской': this.chooseMale,
+            'Пол Женский': this.chooseFemale,
+            'Далее': this.nextButton,
+            'Перейти к оплате': this.goToPay,
         };
 
     }
 
 
     get closeAlert() {
-        return ('//div[@data-test="modal-close"]'); //  Заменить на [data-test="modal-close"] // [class="payment-modal__close"] после добавления в проект
+        return ('[data-test="modal-close"]'); //  Заменить на [data-test="modal-close"] // [class="payment-modal__close"] после добавления в проект
     }
 
     get continueWithoutBonuses() {
@@ -25,8 +29,21 @@ class AfterRegistrationForm {
         return('[data-test="profile_edit_last_name_depos"] input') //локатор сместить на инпут
     }
     get phoneNumber(){
-        return ('[data-test="mobile-phone-field"] input')   //локатор сместить на инпут
+        return ('[data-test="profile_phone_depos"]')   //локатор сместить на инпут
     }
+    get chooseMale() {
+        return ('[data-test="profile_alarm_gender_male_depos"]');
+    }
+    get chooseFemale() {
+        return('[data-test="profile_gender_female_depos"]');
+    }
+    get nextButton() {
+        return('[data-test="profile_submit_step_one_depos"]');
+    }
+    get goToPay() {
+        return('[data-test="profile_button_go_pay_depos"]');
+    }
+
 
 }
 

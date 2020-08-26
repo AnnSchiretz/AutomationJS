@@ -12,8 +12,8 @@ module.exports = {
     'Регистрация Yandex': (process.env.URL+"users/auth/yandex"),
     'Регистрация Google+': (process.env.URL+"users/auth/google_oauth2"),
     'Регистрация Telegram': (process.env.URL+"users/auth/tlgrm"),
-    'Имя': 'AutoTestName_'+browser.helper.randomNumber,
-    'Фамилия': 'AutoTestLastName_' +browser.helper.randomNumber,
+    'Имя': 'AutoTestName'+'риыагрмгПГПГ',
+    'Фамилия': 'AutoTestLastName' +'риыагрмгПГПГ',
     'Телефон': "9162977146",
 
     //SOL
