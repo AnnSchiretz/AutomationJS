@@ -37,3 +37,17 @@ When(/^Я зарегистрирован как пользователь$/, ()=>
 
 
 });
+When(/^Я выбираю дату рождения$/, () => {
+
+    const element = "Дата Рождения";
+    const pageObject = "Страница редактирования профиля";
+    const component = browser.pageObjects[pageObject].elements[element];
+    elementManager.click(component);
+    const year = browser.pageObjects[pageObject].elements["Год"];
+    elementManager.click(year);
+    const month = browser.pageObjects[pageObject].elements["Месяц"];
+    elementManager.click(month);
+    const day = browser.pageObjects[pageObject].elements["День"];
+    elementManager.click(day);
+
+});
