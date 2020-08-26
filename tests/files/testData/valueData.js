@@ -14,7 +14,7 @@ module.exports = {
     'Регистрация Telegram': (process.env.URL+"users/auth/tlgrm"),
     'Имя': 'AutoTestName_'+browser.helper.randomNumber,
     'Фамилия': 'AutoTestLastName_' +browser.helper.randomNumber,
-    'Телефон': browser.helper.randomPhoneNumber,
+    'Телефон': "9162977146",
 
     //SOL
     'Правильный тайтл SOL Sport': "Сол Казино (Sol Casino) официальный сайт c бонусом за регистрацию",
