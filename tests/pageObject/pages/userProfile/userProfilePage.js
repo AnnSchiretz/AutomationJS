@@ -3,7 +3,8 @@ class UserProfilePage {
         this.elements = {
             'Выход': this.logoutButton,
             'Подтвердить Выход - Да': this.confirmExitYes,
-            'Подтвердить Выход - Нет': this.confirmExitNo
+            'Подтвердить Выход - Нет': this.confirmExitNo,
+            'Настройки': this.userProfileSettingButton
 
         };
 
@@ -20,6 +21,10 @@ class UserProfilePage {
 
     get confirmExitNo() {
         return ('[data-test="no_logout_btn_main"]')
+    }
+
+    get userProfileSettingButton() {
+        return ('//*[@class="tabs default-tabs"]/a[3]')
     }
 
 }

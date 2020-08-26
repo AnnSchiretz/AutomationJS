@@ -17,7 +17,7 @@ class headerSOL {
 
     }
     get registrationButton() {
-        return ('//a[@data-test="main_register"]/button[@type="button"]');
+        return ('[data-test="main_register"]');
     }
 
     get profileButton() {
