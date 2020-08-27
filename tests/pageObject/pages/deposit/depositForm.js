@@ -4,8 +4,7 @@ class DepositForm {
             'Закрыть Окно': this.closeAlert,
             'Вывод средств': this.cashOutButton,
             'Пополнение счета': this.depositButton,
-            'Форма Депозита': this.depositForm
-
+            'Выслать Подтверждение': this.sendConfirmationButton,
 
         };
 
@@ -23,11 +22,12 @@ class DepositForm {
 
 
     get depositButton() {
-        return ('[data-test="payment__tab-is-deposit"]');
+        return ('[data-test="payment__tab-is-deposit"]')
     }
-
-    get depositForm() {
-        return ('[class="custom-modal__inner-wr"]');
+    get sendConfirmationButton() {
+        return('[class="payment-method__confirmed__col"]')
+        // jet - class="payment-method__confirmed__col"
+        //sol -  class="payment-method__confirmed-btn"
     }
 }
 
