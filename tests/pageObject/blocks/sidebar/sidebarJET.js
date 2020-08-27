@@ -7,7 +7,7 @@ class sidebarJET {
             'Подтвердить Выход - Да': this.confirmExitYes,
             'Подтвердить Выход - Нет': this.confirmExitNo,
             'Профиль':  this.profileButton,
-            'Мой профиль': this.myProfile
+
 
         }
     }
@@ -33,9 +33,6 @@ class sidebarJET {
         return ('[data-test="my_profile"]');
     }
 
-    get myProfile() {
-        return ('[data-test="my_profile"]');
-    }
 }
 
 

@@ -3,8 +3,8 @@ class DepositForm {
         this.elements = {
             'Закрыть Окно': this.closeAlert,
             'Вывод средств': this.cashOutButton,
-            'Пополнение счета': this.depositButton
-
+            'Пополнение счета': this.depositButton,
+            'Выслать Подтверждение': this.sendConfirmationButton,
 
         };
 
@@ -23,6 +23,11 @@ class DepositForm {
 
     get depositButton() {
         return ('[data-test="payment__tab-is-deposit"]')
+    }
+    get sendConfirmationButton() {
+        return('[class="payment-method__confirmed__col"]')
+        // jet - class="payment-method__confirmed__col"
+        //sol -  class="payment-method__confirmed-btn"
     }
 }
 

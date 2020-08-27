@@ -39,7 +39,3 @@ Then(/^Я нахожусь на главной странице сайта$/, ()
     const component = browser.getUrl();
     assert.strictEqual(process.env.URL, component, "URI страниц не совпадают: домашняя страница - "+process.env.URL+" ,страница после редиректа - "+component);
 });
-Then(/^Я вижу кнопку "([^"]*)" на "([^"]*)"$/, (element, pageObject) => {
-    const component = browser.pageObjects[pageObject].elements[element];
-    assert.strictEqual(true, elementManager.isDisplayed(component), "Иначе - отсутствует кнопка Подтвердить почту");
-});
