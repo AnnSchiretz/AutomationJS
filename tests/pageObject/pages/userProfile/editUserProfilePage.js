@@ -5,7 +5,19 @@ class EditUserProfilePage {
             'Дата Рождения': this.setBirthdayData,
             'Год': this.yearButton,
             'Месяц': this.monthButton,
-            'День': this.dayButton
+            'День': this.dayButton,
+            'Поле Имя': this.nameField,
+            'Поле Фамилия': this.secondNameField,
+            'Поле Номер Телефона': this.phoneNumberField,
+            'Поле Никнэйм': this.nicknameField,
+            'Поле Email': this.emailField,
+            'Получать системные уведомления': this.getSystemAlert,
+            'Получать письма с акциями и подарками': this.getPromotionsAndGifts,
+            'Получать SMS уведомления': this.getSMSAlert,
+            'Отключить бонусы': this.disabledBonuses,
+            'МУЖ Пол': this.maleGenderButton,
+            'ЖЕН Пол': this.femaleGenderButton
+
 
         };
 
