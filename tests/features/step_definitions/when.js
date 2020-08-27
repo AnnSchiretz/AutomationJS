@@ -51,3 +51,8 @@ When(/^Я выбираю дату рождения$/, () => {
     elementManager.click(day);
 
 });
+When(/^Я перезагружаю страницу$/, ()=> {
+
+    browser.refresh();
+
+});

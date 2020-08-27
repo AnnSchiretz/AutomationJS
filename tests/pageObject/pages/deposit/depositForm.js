@@ -3,7 +3,8 @@ class DepositForm {
         this.elements = {
             'Закрыть Окно': this.closeAlert,
             'Вывод средств': this.cashOutButton,
-            'Пополнение счета': this.depositButton
+            'Пополнение счета': this.depositButton,
+            'Форма Депозита': this.depositForm
 
 
         };
@@ -22,7 +23,11 @@ class DepositForm {
 
 
     get depositButton() {
-        return ('[data-test="payment__tab-is-deposit"]')
+        return ('[data-test="payment__tab-is-deposit"]');
+    }
+
+    get depositForm() {
+        return ('[class="custom-modal__inner-wr"]');
     }
 }
 

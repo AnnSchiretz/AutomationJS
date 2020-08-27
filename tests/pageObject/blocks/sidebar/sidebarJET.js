@@ -6,10 +6,11 @@ class sidebarJET {
             'Выход': this.logoutButton,
             'Подтвердить Выход - Да': this.confirmExitYes,
             'Подтвердить Выход - Нет': this.confirmExitNo,
-            'Профиль':  this.profileButton,
-            'Мой профиль': this.myProfile
+            'Мой профиль': this.myProfileButton,
+            'Подписки и соцсети': this.subscriptionsAndSocialNetworks,
+            'Личный Кабинет': this.accountButton
 
-        }
+        };
     }
 
     get bonusesButton() {
@@ -26,15 +27,23 @@ class sidebarJET {
     }
 
     get confirmExitNo() {
-        return ('[data-test="no_logout_btn_main"]')
+        return ('[data-test="no_logout_btn_main"]');
     }
 
     get profileButton() {
         return ('[data-test="my_profile"]');
     }
 
-    get myProfile() {
+    get myProfileButton() {
         return ('[data-test="my_profile"]');
+    }
+
+    get subscriptionsAndSocialNetworks() {
+        return ('[data-test="social_network"]');
+    }
+
+    get accountButton() {
+        return ('[data-test="personal_account"]');
     }
 }
 

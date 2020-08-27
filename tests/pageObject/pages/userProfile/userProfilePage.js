@@ -4,7 +4,8 @@ class UserProfilePage {
             'Выход': this.logoutButton,
             'Подтвердить Выход - Да': this.confirmExitYes,
             'Подтвердить Выход - Нет': this.confirmExitNo,
-            'Настройки': this.userProfileSettingButton
+            'Настройки': this.userProfileSettingButton,
+            'Баланс': this.balanceButton
 
         };
 
@@ -25,6 +26,10 @@ class UserProfilePage {
 
     get userProfileSettingButton() {
         return ('//*[@class="tabs default-tabs"]/a[3]')
+    }
+
+    get balanceButton() {
+        return ('[//*[@class="tabs default-tabs"]/a[1]]');
     }
 
 }
