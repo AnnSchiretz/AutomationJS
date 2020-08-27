@@ -1,9 +1,9 @@
 class ElementManager {
 
 
-    click(selector, ms=15000) {
+    click(selector, ms = 15000) {
         this.waitForClickable(selector, ms);
-        this.waitForDisplayed(selector, ms)
+        this.waitForDisplayed(selector, ms);
         const element = this.getElement(selector);
         return element.click();
     }
@@ -54,18 +54,18 @@ class ElementManager {
     }
 
 
-    isDisplayed(selector, ms=15000) {
+    isDisplayed(selector, ms = 15000) {
         const element = $(selector);
         this.waitForElement(selector, ms);
-        this.waitForClickable(selector,ms)
+        this.waitForClickable(selector, ms);
         return element.isDisplayed();
     }
 
 
-    isClickable(selector, ms=15000) {
+    isClickable(selector, ms = 15000) {
         const element = $(selector);
         this.waitForElement(selector, ms);
-        this.waitForClickable(selector, ms)
+        this.waitForClickable(selector, ms);
         return element.isClickable();
     }
 
@@ -76,21 +76,21 @@ class ElementManager {
     }
 
 
-    waitForClickable(selector, ms=15000) {
+    waitForClickable(selector, ms = 15000) {
         const element = this.getElement(selector);
         element.waitForExist(ms);
         element.waitForClickable();
     }
 
 
-    waitForElement(selector, ms=15000) {
+    waitForElement(selector, ms = 15000) {
         const element = this.getElement(selector);
         element.waitForExist(ms);
         element.waitForDisplayed(ms);
     }
 
 
-    waitForDisplayed(selector, ms=15000) {
+    waitForDisplayed(selector, ms = 15000) {
         const element = this.getElement(selector);
         element.waitForExist(ms);
         element.waitForDisplayed();
@@ -100,6 +100,13 @@ class ElementManager {
     scrollIntoView(selector) {
         const element = this.getElement(selector);
         return element.scrollIntoView();
+    }
+
+    isSelected(selector, ms = 15000) {
+        const element = this.getElement(selector);
+        this.waitForElement(selector, ms);
+        this.waitForClickable(selector, ms);
+        return element.isSelected();
     }
 
 
