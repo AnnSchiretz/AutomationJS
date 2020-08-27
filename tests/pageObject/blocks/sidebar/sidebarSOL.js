@@ -3,7 +3,8 @@ class sidebarSOL {
 
     constructor() {
         this.elements = {
-            'Профиль':  this.profileButton,
+            'Профиль': this.profileButton,
+            'Спорт': this.sportButton
         }
     }
 
@@ -12,6 +13,9 @@ class sidebarSOL {
     }
 
 
+    get sportButton() {
+        return ('[data-test="sport"]');
+    }
 }
 
 

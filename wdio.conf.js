@@ -11,7 +11,7 @@ const sourceSpecDirectory = `tests/features/featureFiles`;
 const jsonTmpDirectory = `tests/reports/json/tmp/`;
 
 
-let featureFilePath = `${sourceSpecDirectory}/../.feature`;
+let featureFilePath = `${sourceSpecDirectory}/*/*.feature`;
 
 
 exports.config = {
@@ -249,7 +249,8 @@ exports.config = {
             'Уведомления': require('./tests/pageObject/pages/alerts/alert'),
             'Страница Профиль Пользователя': require('./tests/pageObject/pages/userProfile/userProfilePage'),
             'Форма Депозита': require('./tests/pageObject/pages/deposit/depositForm'),
-            'Страница редактирования профиля': require('./tests/pageObject/pages/userProfile/editUserProfilePage')
+            'Страница редактирования профиля': require('./tests/pageObject/pages/userProfile/editUserProfilePage'),
+            'Страница Элементов': require('./tests/pageObject/pages/otherElements')
 
         };
 

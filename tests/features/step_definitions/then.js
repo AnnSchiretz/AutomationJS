@@ -58,10 +58,15 @@ Then(/^Я вижу "([^"]*)" в "([^"]*)" на "([^"]*)"$/, (value, element, pag
 
 
 });
-Then(/^Я вижу "([^"]*)" "([^"]*)" на "([^"]*)"$/, (element, state, pageObject)=> {
+Then(/^Я вижу "([^"]*)" "([^"]*)" на "([^"]*)"$/, (element, state, pageObject) => {
 
-   const component = browser.pageObjects[pageObject].elements[element];
-   const status = dataTest[state];
-   assert.strictEqual(elementManager.isSelected(component),status,"Ожидается, что элемент -"+state);
+    const component = browser.pageObjects[pageObject].elements[element];
+    const status = dataTest[state];
+    assert.strictEqual(elementManager.isSelected(component), status, "Ожидается, что элемент -" + state);
+
+});
+Then(/^Я нахожусь на домашней странице$/, () => {
+
+    assert.strictEqual(browser.getUrl(), process.env.URL, "URI адреса не совпадают");
 
 });

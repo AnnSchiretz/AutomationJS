@@ -4,7 +4,8 @@ class headerJET {
         this.elements = {
             'Боковая Панель': this.sidebarButton,
             'Регистрация': this.registrationButton,
-            'Депозит/Касса': this.depositButton
+            'Депозит/Касса': this.depositButton,
+            'Спорт': this.sportButton
 
         }
     }
@@ -19,9 +20,12 @@ class headerJET {
     }
 
     get depositButton() {
-        return ('[data-test="main_deposit"]')
+        return ('[data-test="main_deposit"]');
     }
 
+    get sportButton() {
+        return ('[class="top-bar"]');
+    }
 
 }
 

@@ -2,18 +2,17 @@ class headerSOL {
 
     constructor() {
         this.elements = {
-            'Кнопка Спорт': this.sportButton,
+            'Спорт': this.sportButton,
             'Регистрация': this.registrationButton,
             'Профиль': this.profileButton,
-            'Депозит/Касса': this.depositButton
-
+            'Депозит/Касса': this.depositButton,
 
 
         }
     }
 
     get sportButton() {
-        return ('[data-test="sport"]');
+        return ('//div[@class="top-bar"]//a[@data-test="sport"]');
 
     }
     get registrationButton() {
@@ -27,6 +26,7 @@ class headerSOL {
     get depositButton() {
         return ('[data-test="main_deposit"]')
     }
+
 }
 
 
