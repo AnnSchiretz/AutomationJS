@@ -11,7 +11,7 @@ const sourceSpecDirectory = `tests/features/featureFiles`;
 const jsonTmpDirectory = `tests/reports/json/tmp/`;
 
 
-let featureFilePath = `${sourceSpecDirectory}/*/*.feature`;
+let featureFilePath = `${sourceSpecDirectory}/../.feature`;
 
 
 exports.config = {
