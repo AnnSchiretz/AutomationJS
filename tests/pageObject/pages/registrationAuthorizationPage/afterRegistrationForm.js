@@ -17,6 +17,7 @@ class AfterRegistrationForm {
 
     get closeAlert() {
         return ('[data-test="modal-close"]'); //  Заменить на [data-test="modal-close"] // [class="payment-modal__close"] после добавления в проект
+
     }
 
     get continueWithoutBonuses() {
@@ -29,7 +30,7 @@ class AfterRegistrationForm {
         return('[data-test="profile_edit_last_name_depos"] input') //локатор сместить на инпут
     }
     get phoneNumber(){
-        return ('[data-test="profile_phone_depos"]')   //локатор сместить на инпут
+        return ('[data-test="mobile-phone-field"] input')   //локатор сместить на инпут
     }
     get chooseMale() {
         return ('[data-test="profile_alarm_gender_male_depos"]');
@@ -38,10 +39,11 @@ class AfterRegistrationForm {
         return('[data-test="profile_gender_female_depos"]');
     }
     get nextButton() {
-        return('[data-test="profile_submit_step_one_depos"]');
+        return('[data-test="profile_submit_step_one__depos"]');
+        //for sol - data-test="profile_submit_step_one_depos
     }
     get goToPay() {
-        return('[data-test="profile_button_go_pay_depos"]');
+        return('[data-test="profile_submit_step_one__depos"]');
     }
 
 

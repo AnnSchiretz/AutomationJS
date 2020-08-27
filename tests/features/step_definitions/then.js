@@ -37,11 +37,10 @@ Then(/^Я вижу "([^"]*)" на "([^"]*)" редирект которой ко
     assert.strictEqual(attributeValue, value, "URI атрибута-" + attributeValue + " не совпадает с ожидаемым- " + value);
 
 });
-
 Then(/^Я нахожусь на главной странице сайта$/, () => {
 
     const component = browser.getUrl();
-    assert.strictEqual(process.env.URL, component, "URI страниц не совпадают: домашняя страница - " + process.env.URL + " ,страница после редиректа - " + component);
+    assert.strictEqual(process.env.URL, component, "URI страниц не совпадают: домашняя страница - "+process.env.URL+" ,страница после редиректа - "+component);
 });
 
 Then(/^Я вижу кнопку "([^"]*)" на "([^"]*)"$/, (element, pageObject) => {

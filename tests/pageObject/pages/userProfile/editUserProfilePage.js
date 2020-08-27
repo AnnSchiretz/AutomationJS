@@ -18,6 +18,7 @@ class EditUserProfilePage {
             'МУЖ Пол': this.maleGenderButton,
             'ЖЕН Пол': this.femaleGenderButton
 
+
         };
 
     }
