@@ -40,7 +40,7 @@ Then(/^Я вижу "([^"]*)" на "([^"]*)" редирект которой ко
 Then(/^Я нахожусь на главной странице сайта$/, () => {
 
     const component = browser.getUrl();
-    assert.strictEqual(process.env.URL, component, "URI страниц не совпадают: домашняя страница - "+process.env.URL+" ,страница после редиректа - "+component);
+    assert.strictEqual(process.env.URL, component, "URI страниц не совпадают: домашняя страница - " + process.env.URL + " ,страница после редиректа - " + component);
 });
 
 Then(/^Я вижу кнопку "([^"]*)" на "([^"]*)"$/, (element, pageObject) => {
@@ -67,5 +67,12 @@ Then(/^Я вижу "([^"]*)" "([^"]*)" на "([^"]*)"$/, (element, state, pageOb
 Then(/^Я нахожусь на домашней странице$/, () => {
 
     assert.strictEqual(browser.getUrl(), process.env.URL, "URI адреса не совпадают");
+
+});
+Then(/^Я вижу "([^"]*)" с текстом "([^"]*)" на "([^"]*)"$/, (element, message, pageObject) => {
+
+    const component = browser.pageObjects[pageObject].elements[element];
+    const text = elementManager.getText(component);
+    assert.strictEqual(text, message, "Сообщение - " + message + "не соответствует - " + text);
 
 });

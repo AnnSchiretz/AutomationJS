@@ -8,13 +8,14 @@ class headerSOL {
             'Депозит/Касса': this.depositButton,
 
 
-        }
+        };
     }
 
     get sportButton() {
         return ('//div[@class="top-bar"]//a[@data-test="sport"]');
 
     }
+
     get registrationButton() {
         return ('[data-test="main_register"]');
     }
@@ -24,7 +25,7 @@ class headerSOL {
     }
 
     get depositButton() {
-        return ('[data-test="main_deposit"]')
+        return ('[data-test="main_deposit"]');
     }
 
 }
