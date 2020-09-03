@@ -18,7 +18,7 @@ When(/^Я ввожу "([^"]*)" в "([^"]*)" на "([^"]*)"$/, (value, element, p
 });
 
 // Действия с элементами из Header
-When(/^Я нажимаю "([^"]*)" в хедере$/, (element)=> {
+When(/^Я нажимаю "([^"]*)" в хедере$/, (element) => {
 
     const component = browser.headers[process.env.PROJECT].elements[element];
     elementManager.click(component);
@@ -26,17 +26,13 @@ When(/^Я нажимаю "([^"]*)" в хедере$/, (element)=> {
 });
 
 // Действия с элементами из Sidebar
-When(/^Я нажимаю "([^"]*)" в боковом меню$/, (element)=> {
+When(/^Я нажимаю "([^"]*)" в боковом меню$/, (element) => {
 
     const component = browser.sidebars[process.env.PROJECT].elements[element];
     elementManager.click(component);
 
 });
-When(/^Я зарегистрирован как пользователь$/, ()=> {
 
-
-
-});
 When(/^Я выбираю дату рождения$/, () => {
 
     const element = "Дата Рождения";
@@ -51,8 +47,9 @@ When(/^Я выбираю дату рождения$/, () => {
     elementManager.click(day);
 
 });
-When(/^Я перезагружаю страницу$/, ()=> {
+When(/^Я перезагружаю страницу$/, () => {
 
     browser.refresh();
 
 });
+
