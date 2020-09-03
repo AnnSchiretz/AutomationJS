@@ -35,8 +35,8 @@ class ElementManager {
 
 
     getSize(selector) {
-        const element = this.getElement(selector);
-        element.getSize();
+        const element = $(selector);
+        return element.getSize(selector);
     }
 
 
@@ -109,6 +109,12 @@ class ElementManager {
         return element.isSelected();
     }
 
+
+    isEnabled(selector, ms = 15000) {
+        const element = this.getElement(selector);
+        this.waitForElement(selector, ms);
+        return element.isEnabled();
+    }
 
 }
 
