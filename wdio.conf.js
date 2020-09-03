@@ -25,7 +25,7 @@ exports.config = {
     runner: 'local',
     // hostname: "192.168.150.222",//Сервер
     hostname: "localhost",
-    baseURL:'',
+    baseURL: '',
     port: 4444,
     path: "/wd/hub",
 
@@ -191,6 +191,7 @@ exports.config = {
         tagExpression: '',  // <string> (expression) only execute the features or scenarios with tags matching the expression
         timeout: 30000,     // <number> timeout for step definitions
         ignoreUndefinedDefinitions: false, // <boolean> Enable this config to treat undefined definitions as warnings.
+
     },
 
 
@@ -241,16 +242,18 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
-    before:  (capabilities, specs) => {
+    before: (capabilities, specs) => {
         browser.pageObjects = {
-            'Главная страница': require('./tests/pageObject/mainPage'),
+            'Главная страница': require('./tests/pageObject/pages/mainPage'),
             'Форма Регистрации/Авторизации': require('./tests/pageObject/pages/registrationAuthorizationPage/registrationAuthorizationForm'),
             'Форма Дорегистрации': require('./tests/pageObject/pages/registrationAuthorizationPage/afterRegistrationForm'),
             'Уведомления': require('./tests/pageObject/pages/alerts/alert'),
             'Страница Профиль Пользователя': require('./tests/pageObject/pages/userProfile/userProfilePage'),
             'Форма Депозита': require('./tests/pageObject/pages/deposit/depositForm'),
             'Страница редактирования профиля': require('./tests/pageObject/pages/userProfile/editUserProfilePage'),
-            'Страница Элементов': require('./tests/pageObject/pages/otherElements')
+            'Страница Элементов': require('./tests/pageObject/pages/otherElements'),
+            'Лендинг': require('./tests/pageObject/pages/landing/landingPage'),
+            'Прочие Элементы': require('./tests/pageObject/pages/otherElements')
 
         };
 
@@ -272,6 +275,7 @@ exports.config = {
 
 
         };
+
 
         browser.elementManager = require('./tests/services/elementManager');
         browser.helper = require('./tests/helper/helper');
