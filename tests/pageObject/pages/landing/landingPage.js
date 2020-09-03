@@ -1,8 +1,9 @@
-class DepositForm {
+class LandingPage {
+
     constructor() {
         this.elements = {
             'Крутить': this.spinButton,
-            'Крутить еще!': this.spinAgain,
+            'Крутить еще': this.spinAgain,
             'Форма Регистрации': this.registrationFormLanding,
             'Поле Почта': this.emailLandingInput,
             'Поле Пароль': this.passwordLandingInput,
@@ -40,4 +41,4 @@ class DepositForm {
 }
 
 
-module.exports = new DepositForm();
+module.exports = new LandingPage();

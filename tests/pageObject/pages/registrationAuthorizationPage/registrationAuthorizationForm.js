@@ -6,6 +6,7 @@ class RegistrationAuthorizationForm {
             'Поле Пароль': this.passwordInput,
             'Чекбокс Получать информацию': this.getInformationCheckbox,
             'Зарегистрироваться': this.submitButton,
+            'Войти': this.signInButton,
             'Регистрация ОК': this.registrationOK,
             'Регистрация Facebook': this.registrationFacebook,
             'Регистрация VK': this.registrationVK,
@@ -28,8 +29,12 @@ class RegistrationAuthorizationForm {
         return ('[data-test="main_register"]');
     }
 
+    get signInButton() {
+        return ('[data-test="enter_submit"]');
+    }
+
     get emailInput() {
-        return ('[data-test="registr_email_field"] [name="email"]');
+        return ('[name="email"]');
     }
 
     get getInformationCheckbox() {
@@ -41,7 +46,7 @@ class RegistrationAuthorizationForm {
     }
 
     get passwordInput() {
-        return ('[data-test="registr_passwd_field"] [name="password"]');
+        return ('[name="password"]');
     }
 
     get registrationVK() {
@@ -49,7 +54,7 @@ class RegistrationAuthorizationForm {
     }
 
     get registrationOK() {
-        return ('[data-test="register_odnoklassniki"]');
+        return ('//a[@data-test="register_odnoklassniki"]');
     }
 
     get registrationFacebook() {
@@ -73,15 +78,15 @@ class RegistrationAuthorizationForm {
     }
 
     get loginVKInput() {
-        return ('//div[@class="oauth_form"]//input[@name="email"]')
+        return ('//div[@class="oauth_form"]//input[@name="email"]');
     }
 
     get passwordVKInput() {
-        return ('//div[@class="oauth_form"]//input[@name="pass"]')
+        return ('//div[@class="oauth_form"]//input[@name="pass"]');
     }
 
     get submitVKButton() {
-        return ('[type="submit"]')
+        return ('[type="submit"]');
     }
 }
 

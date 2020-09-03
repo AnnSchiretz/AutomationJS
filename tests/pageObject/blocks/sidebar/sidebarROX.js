@@ -3,7 +3,7 @@ class sidebarROX {
     constructor() {
         this.elements = {
             'test': this.test,
-        }
+        };
     }
 
     get test() {

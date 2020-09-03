@@ -5,9 +5,10 @@ class headerJET {
             'Боковая Панель': this.sidebarButton,
             'Регистрация': this.registrationButton,
             'Депозит/Касса': this.depositButton,
-            'Спорт': this.sportButton
+            'Спорт': this.sportButton,
+            'Войти': this.signIn
 
-        }
+        };
     }
 
     get sidebarButton() {
@@ -27,6 +28,9 @@ class headerJET {
         return ('[class="top-bar"]');
     }
 
+    get signIn() {
+        return ('[id="top-sign_in"]');
+    }
 }
 
 

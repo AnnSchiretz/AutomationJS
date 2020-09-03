@@ -21,11 +21,11 @@ class UserProfilePage {
     }
 
     get confirmExitNo() {
-        return ('[data-test="no_logout_btn_main"]')
+        return ('[data-test="no_logout_btn_main"]');
     }
 
     get userProfileSettingButton() {
-        return ('//*[@class="tabs default-tabs"]/a[3]')
+        return ('//*[@class="tabs default-tabs"]/a[3]');
     }
 
     get balanceButton() {

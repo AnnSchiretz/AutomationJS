@@ -6,6 +6,7 @@ class headerSOL {
             'Регистрация': this.registrationButton,
             'Профиль': this.profileButton,
             'Депозит/Касса': this.depositButton,
+            'Войти': this.loginButton,
 
 
         };
@@ -28,6 +29,9 @@ class headerSOL {
         return ('[data-test="main_deposit"]');
     }
 
+    get loginButton() {
+        return ('[data-test="login_button"]');
+    }
 }
 
 
