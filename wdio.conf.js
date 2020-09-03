@@ -377,6 +377,12 @@ exports.config = {
                 scenarioTimestamp: true,
                 launchReport: true,
                 ignoreBadJsonFile: true,
+                metadata: {
+                    'Проект': process.env.PROJECT,
+                    'Дата и время': currentTime,
+                    'URI проекта': process.env.URL,
+
+                },
 
             };
 
