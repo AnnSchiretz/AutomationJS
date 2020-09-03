@@ -33,8 +33,14 @@ wdio wdio.conf.js
 
 npm run test -- --cucumberOpts.tagExpression='not @fast and smoke'
 
-запустит тесты с тэгом smoke и исключит из списка запуска тесты с тэгом fast
+запустит тесты с тегом smoke и исключит из списка запуска тесты с тэгом fast
 
+3. Пример команды для запуска тестов:
+`URL_LAND='https://jet-wheel.com' PROJECT='JET' URL='https://jet.casino/'  npm run chrome -- --cucumberOpts.tagExpression='@TEST_TST-5022'`
+
+URL_LAND - для тестов с лендингами
+PROJECT - проект на котором запускаются тесты
+chrome - скрипт запускающий браузер Chrome
 
 **Настройка selenoid**
 
@@ -87,4 +93,7 @@ http://localhost:8080/#/
     
 **_Необходимо добавить права на папку проекта чтобы при запуске тестов создались папки в директории reports_**:
 sudo chmod -R 777 /Users/e.miasoedov/jsbot
-   
+  
+  Если при выполнении команды npm install не установился модуль @wdio/sync, то необходимо выполнить шаги согласно инструкции ниже:
+  
+  `https://medium.com/flawless-app-stories/gyp-no-xcode-or-clt-version-detected-macos-catalina-anansewaa-38b536389e8d`
