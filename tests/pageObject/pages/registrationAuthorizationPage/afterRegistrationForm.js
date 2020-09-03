@@ -21,16 +21,16 @@ class AfterRegistrationForm {
     }
 
     get continueWithoutBonuses() {
-        return ('[data-test="continue_without_bonuses"]')
+        return ('[data-test="continue_without_bonuses"]');
     }
     get nameField() {
-        return('[data-test="profile_edit_first_name_depos"] input') // локатор сместить на инпут, а не на див
+        return ('[data-test="profile_edit_first_name_depos"] input'); // локатор сместить на инпут, а не на див
     }
     get lastNameField() {
-        return('[data-test="profile_edit_last_name_depos"] input') //локатор сместить на инпут
+        return ('[data-test="profile_edit_last_name_depos"] input'); //локатор сместить на инпут
     }
-    get phoneNumber(){
-        return ('[data-test="mobile-phone-field"] input')   //локатор сместить на инпут
+    get phoneNumber() {
+        return ('[data-test="mobile-phone-field"] input');   //локатор сместить на инпут
     }
     get chooseMale() {
         return ('[data-test="profile_alarm_gender_male_depos"]');
