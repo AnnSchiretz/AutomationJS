@@ -16,7 +16,7 @@ class EditUserProfilePage {
             'Получать SMS уведомления': this.getSMSAlert,
             'Отключить бонусы': this.disabledBonuses,
             'МУЖ Пол': this.maleGenderButton,
-            'ЖЕН Пол': this.femaleGenderButton
+            'ЖЕН Пол': this.femaleGenderButton,
 
 
         };
@@ -25,23 +25,23 @@ class EditUserProfilePage {
 
 
     get confirmEmailButton() {
-        return ('//form[@class="profile-contacts__cols"][1]');// Локатор формы с кнопкой Подтвердить напротив инпута почты
+        return ('[data-test=”send_confirmation”]');
     }
 
     get setBirthdayData() {
-        return ('[class="relative profile-edit__col birthday-calendar__wrapper"]');
+        return ('[data-test="profile_calendar_edit"]');
     }
 
     get yearButton() {
-        return ("//div[@class='vdp-datepicker date-picker__wrapper']/div[4]//span[text()='2000']");
+        return ('//div[@data-test="select_year"]/span[2]');
     }
 
     get monthButton() {
-        return ('//div[@class="vdp-datepicker date-picker__wrapper"]/div[3]//span[4]');
+        return ('//div[@data-test="select_month"]/span[2]');
     }
 
     get dayButton() {
-        return ('//div[@class="vdp-datepicker date-picker__wrapper"]/div[2]//span[5]');
+        return ('//div[@data-test="select_day"]//span[18]');
     }
 
     get nameField() {
@@ -53,7 +53,7 @@ class EditUserProfilePage {
     }
 
     get phoneNumberField() {
-        return ('[]');
+        return ('[data-test="profile_phone_depos"]');
     }
 
     get nicknameField() {

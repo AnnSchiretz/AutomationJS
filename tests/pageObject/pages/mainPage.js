@@ -7,7 +7,9 @@ class MainPage {
             'Кнопка Войти/Подтвердить': this.submitButton,
             'Кнопка Профайл': this.profile,
             'Кнопка Закрыть окно депозита': this.closeDepositTab,
-            'Кнопка Выход': this.logoutButton
+            'Кнопка Выход': this.logoutButton,
+            'Плашка Спорт': this.billetSport,
+            'Плашка Слоты': this.billetSlot
         };
 
     }
@@ -44,10 +46,17 @@ class MainPage {
     }
 
 
-    get logoutButton(){
+    get logoutButton() {
         return ('[data-test="main_logout"]');
     }
 
+    get billetSport() {
+        return ('[data-test="sport_collection"]');
+    }
+
+    get billetSlot() {
+        return ('[data-test=”slots_collection”]');
+    }
 }
 
 module.exports = new MainPage();

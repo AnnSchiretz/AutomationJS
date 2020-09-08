@@ -5,7 +5,10 @@ class UserProfilePage {
             'Подтвердить Выход - Да': this.confirmExitYes,
             'Подтвердить Выход - Нет': this.confirmExitNo,
             'Настройки': this.userProfileSettingButton,
-            'Баланс': this.balanceButton
+            'Баланс': this.balanceButton,
+            'История': this.historyButton,
+            'Безопасность': this.securityButton
+
 
         };
 
@@ -25,13 +28,20 @@ class UserProfilePage {
     }
 
     get userProfileSettingButton() {
-        return ('//*[@class="tabs default-tabs"]/a[3]');
+        return ('[data-test="settings_in_lk"]');
     }
 
     get balanceButton() {
-        return ('[//*[@class="tabs default-tabs"]/a[1]]');
+        return ('[data-test="balance_in_lk"]');
     }
 
+    get historyButton() {
+        return ('[data-test="proﬁle_deposit"]');
+    }
+
+    get securityButton() {
+        return ('[data-test="profile_security_in_lk"]');
+    }
 }
 
 

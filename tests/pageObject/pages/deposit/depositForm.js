@@ -20,6 +20,9 @@ class DepositForm {
             'Ripple': this.ripple,
             'Litecoin': this.litecoin,
             'PAYEER': this.payeer,
+            'Выслать Подтверждение Email': this.sendConfirmEmail,
+            'Неподтвержденный Email': this.notConfirmedEmail,
+            'Форма Депозита': this.depositForm
 
 
         };
@@ -28,7 +31,7 @@ class DepositForm {
 
     get closeAlert() {
 
-        return ('[class="payment__close"]'); //  Заменить на [data-test="modal-close"] // [class="payment-modal__close"] после добавления в проект
+        return ('[data-test="modal_close"]');
     }
 
 
@@ -118,6 +121,19 @@ class DepositForm {
         const quote = "'";
         return ("[data-test=" + quote + Buffer.from("piastrix" + "payeer").toString('base64') + "_payment_method" + quote + "]");
     }
+
+    get sendConfirmEmail() {
+        return ('[data-test="send_confirmation" ]');
+    }
+
+    get notConfirmedEmail() {
+        return ('[data-test="not_confirm_email_field_in_cashout_modal"]');
+    }
+
+    get depositForm() {
+        return ('[data-test="payment-modal__body-wrap"]');
+    }
+
 }
 
 

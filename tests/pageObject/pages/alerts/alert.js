@@ -5,7 +5,8 @@ class Alert {
             'Ваш e-mail не подтвержден': this.emailNotConfirmed,
             'Проверить почту': this.checkEmailButton,
             'Уведомление - Данные успешно добавлены': this.dataSuccessfullyUpdate,
-            'Письмо было отправлено': this.emailSendAlert
+            'Письмо было отправлено': this.emailSendAlert,
+            'Письмо было отправлено. Проверте папку СПАМ': this.letterWasSent
         };
 
     }
@@ -16,19 +17,23 @@ class Alert {
     }
 
     get emailNotConfirmed() {
-        return ('[id="popup-email_not_verified"]'); //Заменить на другой после добавления локатора
+        return ('[data-test=”email_is_not_confirm”]');
     }
 
     get checkEmailButton() {
-        return ('[class="success-registration__btn-wr"]'); // Заменить на нормальный локатор [data-test='go-to-confirm-email']
+        return ('[data-test="go_to_confirm_email"]');
     }
 
     get dataSuccessfullyUpdate() {
-        return ('[class="vue-notification-group"]');
+        return ('[data-test=”data_update_successfully”]');
     }
 
     get emailSendAlert() {
         return ('[class="vue-notification-wrapper"]');
+    }
+
+    get letterWasSent() {
+        return ('[data-test="send_email_to_mail"]');
     }
 }
 

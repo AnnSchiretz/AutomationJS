@@ -2,7 +2,7 @@ class OtherElements {
 
     constructor() {
         this.elements = {
-            'Логотип': this.profileButton,
+            'Логотип': this.logo,
             'ОК Форма': this.okForm,
             'Facebook Форма': this.facebookForm,
             'MailRU Форма': this.mailRuForm,
@@ -12,10 +12,6 @@ class OtherElements {
 
 
         };
-    }
-
-    get logoButton() {
-        return ('[class="top-bar__logo"]');
     }
 
     get okForm() {
@@ -40,6 +36,10 @@ class OtherElements {
 
     get telegramForm() {
         return ('[id="widget_login"]');
+    }
+
+    get logo() {
+        return ('[data-test="logo_casino"]');
     }
 
 }

@@ -16,34 +16,40 @@ class AfterRegistrationForm {
 
 
     get closeAlert() {
-        return ('[data-test="modal-close"]'); //  Заменить на [data-test="modal-close"] // [class="payment-modal__close"] после добавления в проект
-
+        return ('[data-test="registration_modal_close" ]');
     }
 
     get continueWithoutBonuses() {
         return ('[data-test="continue_without_bonuses"]');
     }
+
     get nameField() {
         return ('[data-test="profile_edit_first_name_depos"] input'); // локатор сместить на инпут, а не на див
     }
+
     get lastNameField() {
         return ('[data-test="profile_edit_last_name_depos"] input'); //локатор сместить на инпут
     }
+
     get phoneNumber() {
-        return ('[data-test="mobile-phone-field"] input');   //локатор сместить на инпут
+        return ('[data-test="profile_edit_last_name"]');
     }
+
     get chooseMale() {
         return ('[data-test="profile_alarm_gender_male_depos"]');
     }
+
     get chooseFemale() {
-        return('[data-test="profile_gender_female_depos"]');
+        return ('[data-test="profile_gender_female_depos"]');
     }
+
     get nextButton() {
-        return('[data-test="profile_submit_step_one__depos"]');
+        return ('[data-test="profile_submit_step_one__depos"]');
         //for sol - data-test="profile_submit_step_one_depos
     }
+
     get goToPay() {
-        return('[data-test="profile_submit_step_one__depos"]');
+        return ('[data-test="profile_submit_step_one_depos"]');
     }
 
 

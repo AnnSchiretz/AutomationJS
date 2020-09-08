@@ -17,7 +17,10 @@ class RegistrationAuthorizationForm {
             //Элементы на странице авторизации через VK
             'Поле Логин VK': this.loginVKInput,
             'Поле Пароль VK': this.passwordVKInput,
-            'Войти VK': this.submitVKButton
+            'Войти VK': this.submitVKButton,
+            'Выбор Валюты': this.currencySelector,
+            'Евро': this.euroCurrency,
+            'Российский рубль': this.rusRubleCurrency,
 
 
         };
@@ -50,31 +53,31 @@ class RegistrationAuthorizationForm {
     }
 
     get registrationVK() {
-        return ('//a[@data-test="register_vkontakte"]');
+        return ('[data-test="register_vkontakte"]');
     }
 
     get registrationOK() {
-        return ('//a[@data-test="register_odnoklassniki"]');
+        return ('[data-test="register_odnoklassniki"]');
     }
 
     get registrationFacebook() {
-        return ('//a[@data-test="register_facebook"]');
+        return ('[data-test="register_facebook"]');
     }
 
     get registrationMailRU() {
-        return ('//a[@data-test="register_mailRu"]');
+        return ('[data-test="register_mailRu"]');
     }
 
     get registrationGooglePlus() {
-        return ('//a[@data-test="register_googleplus"]');
+        return ('[data-test="register_googleplus"]');
     }
 
     get registrationYandex() {
-        return ('//a[@data-test="register_yandex"]');
+        return ('[data-test="register_yandex"]');
     }
 
     get registrationTelegram() {
-        return ('//a[@data-test="register_telegram"]');
+        return ('[data-test="register_telegram"]');
     }
 
     get loginVKInput() {
@@ -87,6 +90,18 @@ class RegistrationAuthorizationForm {
 
     get submitVKButton() {
         return ('[type="submit"]');
+    }
+
+    get currencySelector() {
+        return ('[data-test="select_currency"]');
+    }
+
+    get euroCurrency() {
+        return ('//*[@data-test="currency_eur"]/..');
+    }
+
+    get rusRubleCurrency() {
+        return ('//*[@data-test="currency_rub"]/..');
     }
 }
 
