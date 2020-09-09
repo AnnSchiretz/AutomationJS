@@ -17,7 +17,7 @@ class EditUserProfilePage {
             'Отключить бонусы': this.disabledBonuses,
             'МУЖ Пол': this.maleGenderButton,
             'ЖЕН Пол': this.femaleGenderButton,
-
+            'Сохранить изменения': this.saveChanges,
 
         };
 
@@ -29,7 +29,7 @@ class EditUserProfilePage {
     }
 
     get setBirthdayData() {
-        return ('[data-test="profile_calendar_edit"]');
+        return ('//input[@data-test="profile_calendar_edit"]/../..');
     }
 
     get yearButton() {
@@ -65,19 +65,19 @@ class EditUserProfilePage {
     }
 
     get getSystemAlert() {
-        return ('[]');
+        return ('//input[@data-test="profile_receive_newsletters"]/../..');
     }
 
     get getPromotionsAndGifts() {
-        return ('[]');
+        return ('//input[@data-test="profile_receive_promos"]/../..');
     }
 
     get getSMSAlert() {
-        return ('[]');
+        return ('//input[@data-test="profile_receive_sms_promos"]/../..');
     }
 
     get disabledBonuses() {
-        return ('[]');
+        return ('//input[@data-test="turn_on_off_bonuses"]/../..');
     }
 
     get maleGenderButton() {
@@ -86,6 +86,9 @@ class EditUserProfilePage {
 
     get femaleGenderButton() {
         return ('[data-test="profile_gender_female"]');
+    }
+    get saveChanges() {
+        return ('[data-test="profile_submit"]');
     }
 }
 
