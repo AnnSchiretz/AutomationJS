@@ -25,7 +25,7 @@ class Alert {
     }
 
     get dataSuccessfullyUpdate() {
-        return ('[data-test=”data_update_successfully”]');
+        return ('[data-test="data_update_successfully"]');
     }
 
     get emailSendAlert() {
