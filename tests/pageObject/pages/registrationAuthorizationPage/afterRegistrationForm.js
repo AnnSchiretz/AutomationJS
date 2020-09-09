@@ -16,7 +16,7 @@ class AfterRegistrationForm {
 
 
     get closeAlert() {
-        return ('[data-test="registration_modal_close" ]');
+        return ('[data-test="modal_close" ]');
     }
 
     get continueWithoutBonuses() {
