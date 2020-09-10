@@ -8,8 +8,8 @@ class OtherElements {
             'MailRU Форма': this.mailRuForm,
             'Yandex Форма': this.yandexForm,
             'Google+ Форма': this.googleForm,
-            'Telegram Форма': this.telegramForm
-
+            'Telegram Форма': this.telegramForm,
+            'Страница Со Ставками': this.sportPage,
 
         };
     }
@@ -42,6 +42,9 @@ class OtherElements {
         return ('[data-test="logo_casino"]');
     }
 
+    get sportPage() {
+        return ('#bettech');
+    }
 }
 
 
