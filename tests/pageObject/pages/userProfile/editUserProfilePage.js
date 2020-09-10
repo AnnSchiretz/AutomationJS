@@ -88,7 +88,8 @@ class EditUserProfilePage {
         return ('[data-test="profile_gender_female"]');
     }
     get saveChanges() {
-        return ('[data-test="profile_submit"]');
+        return ('[type="submit"]');
+        //'[data-test="profile_submit"]'
     }
 }
 
