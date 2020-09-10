@@ -36,7 +36,7 @@ npm run test -- --cucumberOpts.tagExpression='not @fast and smoke'
 запустит тесты с тегом smoke и исключит из списка запуска тесты с тэгом fast
 
 3. Пример команды для запуска тестов:
-`URL_LAND='https://jet-wheel.com' PROJECT='JET' URL='https://jet.casino/'  npm run chrome -- --cucumberOpts.tagExpression='@TEST_TST-5022'`
+`URL_LAND='https://jet-wheel.com/' PROJECT='SOL' URL='https://dev:dev123@dev.kube.dev001.ru/ru'  npm run chrome -- --cucumberOpts.tagExpression='@socialRegistration'`
 
 URL_LAND - для тестов с лендингами
 PROJECT - проект на котором запускаются тесты
