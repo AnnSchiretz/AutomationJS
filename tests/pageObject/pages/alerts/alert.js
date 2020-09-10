@@ -2,11 +2,11 @@ class Alert {
     constructor() {
         this.elements = {
             'Закрыть Окно': this.closeAlert,
-            'Ваш e-mail не подтвержден': this.emailNotConfirmed,
-            'Проверить почту': this.checkEmailButton,
-            'Уведомление - Данные успешно добавлены': this.dataSuccessfullyUpdate,
-            'Письмо было отправлено': this.emailSendAlert,
-            'Письмо было отправлено. Проверте папку СПАМ': this.letterWasSent
+            'Ваш E-mail Не Подтвержден': this.emailNotConfirmed,
+            'Проверить Почту': this.checkEmailButton,
+            'Уведомление - Данные Успешно Добавлены': this.dataSuccessfullyUpdate,
+            'Письмо Было Отправлено': this.emailSendAlert,
+            'Письмо Было Отправлено. Проверьте Папку СПАМ': this.letterWasSent
         };
 
     }
@@ -17,7 +17,7 @@ class Alert {
     }
 
     get emailNotConfirmed() {
-        return ('[data-test=”email_is_not_confirm”]');
+        return ('[data-test="email_is_not_confirm"]');
     }
 
     get checkEmailButton() {

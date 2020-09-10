@@ -71,7 +71,7 @@ Then(/^Я нахожусь на домашней странице$/, () => {
 });
 Then(/^Я вижу "([^"]*)" с текстом "([^"]*)" на "([^"]*)"$/, (element, message, pageObject) => {
 
-    browser.pause(500);
+    browser.pause(1000);
     const component = browser.pageObjects[pageObject].elements[element];
     const text = elementManager.getText(component);
     //

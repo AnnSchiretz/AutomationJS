@@ -5,7 +5,7 @@ class sidebarSOL {
         this.elements = {
             'Профиль': this.profileButton,
             'Спорт': this.sportButton
-        }
+        };
     }
 
     get profileButton() {

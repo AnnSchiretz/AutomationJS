@@ -2,21 +2,21 @@ class AfterRegistrationForm {
     constructor() {
         this.elements = {
             'Закрыть Окно': this.closeAlert,
-            'Продолжить без бонуса': this.continueWithoutBonuses,
+            'Продолжить Без Бонуса': this.continueWithoutBonuses,
             'Поле Имя': this.nameField,
             'Поле Фамилия': this.lastNameField,
             'Поле Телефон': this.phoneNumber,
             'Пол Мужской': this.chooseMale,
             'Пол Женский': this.chooseFemale,
             'Далее': this.nextButton,
-            'Перейти к оплате': this.goToPay,
+            'Перейти К Оплате': this.goToPay,
         };
 
     }
 
 
     get closeAlert() {
-        return ('[data-test="modal_close" ]');
+        return ('[data-test="modal_close"]');
     }
 
     get continueWithoutBonuses() {
@@ -24,15 +24,15 @@ class AfterRegistrationForm {
     }
 
     get nameField() {
-        return ('[data-test="profile_edit_first_name_depos"] input'); // локатор сместить на инпут, а не на див
+        return ('//input[@data-test="profile_edit_first_name_depos"]');
     }
 
     get lastNameField() {
-        return ('[data-test="profile_edit_last_name_depos"] input'); //локатор сместить на инпут
+        return ('//input[@data-test="profile_edit_last_name_depos"]');
     }
 
     get phoneNumber() {
-        return ('[data-test="profile_edit_last_name"]');
+        return ('//input[@data-test="profile_phone_depos"]');
     }
 
     get chooseMale() {
@@ -44,14 +44,17 @@ class AfterRegistrationForm {
     }
 
     get nextButton() {
-        return ('[data-test="profile_submit_step_one__depos"]');
+        return ('[data-test="profile_submit_step_one_depos"]');
         //for sol - data-test="profile_submit_step_one_depos
+        //jet - data-test="profile_submit_step_one__depos"
     }
 
     get goToPay() {
-        return ('[data-test="profile_submit_step_one_depos"]');
+        return ('[data-test="profile_button_go_pay_depos"][type="submit"]');
     }
 
+//jet  data-test="profile_submit_step_one_depos"
+    //sol  [data-test="profile_button_go_pay_depos"][type="submit"]
 
 }
 

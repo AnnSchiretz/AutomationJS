@@ -6,8 +6,8 @@ class sidebarJET {
             'Выход': this.logoutButton,
             'Подтвердить Выход - Да': this.confirmExitYes,
             'Подтвердить Выход - Нет': this.confirmExitNo,
-            'Мой профиль': this.myProfileButton,
-            'Подписки и соцсети': this.subscriptionsAndSocialNetworks,
+            'Мой Профиль': this.myProfileButton,
+            'Подписки И Соцсети': this.subscriptionsAndSocialNetworks,
             'Личный Кабинет': this.accountButton
 
         };

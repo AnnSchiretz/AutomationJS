@@ -3,17 +3,17 @@ class DepositForm {
     constructor() {
         this.elements = {
             'Закрыть Окно': this.closeAlert,
-            'Вывод средств': this.cashOutButton,
-            'Пополнение счета': this.depositButton,
+            'Вывод Средств': this.cashOutButton,
+            'Пополнение Счета': this.depositButton,
             'Выслать Подтверждение': this.sendConfirmationButton,
-            'Выберите способ вывода': this.chooseChaoutMethodTitlr,
+            'Выберите Способ Вывода': this.chooseCashOutMethodTitle,
             'Изменить': this.changePaymentMethod,
             'Сообщение': this.paymentMessage,
-            'Банковская карта на вывод JET': this.bankCardJETCashOut,
-            'Банковская карта на вывод SOL': this.bankCardSOLCashOut,
-            'Qiwi кошелек': this.qiwiPayment,
+            'Банковская Карта На Вывод JET': this.bankCardJETCashOut,
+            'Банковская Карта На Вывод SOL': this.bankCardSOLCashOut,
+            'Qiwi Кошелек': this.qiwiPayment,
             'Яндекс.Деньги': this.yandexMoney,
-            'Мобильные платежи': this.mobilePayments,
+            'Мобильные Платежи': this.mobilePayments,
             'Bitcoin Cash': this.bitcoinCash,
             'Bitcoin': this.bitcoin,
             'Etherium': this.etherium,
@@ -45,12 +45,12 @@ class DepositForm {
     }
 
     get sendConfirmationButton() {
-        return ('[class="payment-method__confirmed__col"]');
+        return ('[class="payment-method__confirmed-btn"]');
         //jet - class="payment-method__confirmed__col"
         //sol -  class="payment-method__confirmed-btn"
     }
 
-    get chooseChaoutMethodTitlr() {
+    get chooseCashOutMethodTitle() {
         return ('[class="payment-providers-list__title"]');
     }
 
@@ -69,7 +69,7 @@ class DepositForm {
 
     get bankCardJETCashOut() {
         const quote = "'";
-        return ("[data-test=" + quote + Buffer.from("vialet" + "bank_card").toString('base64') + "_payment_method" + quote + "]");
+        return ("[data-test=" + quote + Buffer.from("win_pay" + "bank_card").toString('base64') + "_payment_method" + quote + "]");
     }
 
     get bankCardSOLCashOut() {

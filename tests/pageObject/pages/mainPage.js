@@ -6,7 +6,7 @@ class MainPage {
             'Поле Пароль': this.passwordInput,
             'Кнопка Войти/Подтвердить': this.submitButton,
             'Кнопка Профайл': this.profile,
-            'Кнопка Закрыть окно депозита': this.closeDepositTab,
+            'Кнопка Закрыть Окно Депозита': this.closeDepositTab,
             'Кнопка Выход': this.logoutButton,
             'Плашка Спорт': this.billetSport,
             'Плашка Слоты': this.billetSlot

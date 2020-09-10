@@ -3,7 +3,7 @@ class LandingPage {
     constructor() {
         this.elements = {
             'Крутить': this.spinButton,
-            'Крутить еще': this.spinAgain,
+            'Крутить Еще': this.spinAgain,
             'Форма Регистрации': this.registrationFormLanding,
             'Поле Почта': this.emailLandingInput,
             'Поле Пароль': this.passwordLandingInput,

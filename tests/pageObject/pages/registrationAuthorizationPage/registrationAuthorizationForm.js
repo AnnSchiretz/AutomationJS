@@ -4,7 +4,7 @@ class RegistrationAuthorizationForm {
             'Регистрация': this.registrationButton,
             'Поле Почта': this.emailInput,
             'Поле Пароль': this.passwordInput,
-            'Чекбокс Получать информацию': this.getInformationCheckbox,
+            'Чекбокс Получать Информацию': this.getInformationCheckbox,
             'Зарегистрироваться': this.submitButton,
             'Войти': this.signInButton,
             'Регистрация ОК': this.registrationOK,

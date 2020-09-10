@@ -76,7 +76,7 @@ exports.config = {
         //
 
         browserName: 'chrome',
-        browserVersion: '84.0',
+        browserVersion: '85.0',
         'goog:chromeOptions': {
             args: [
                 '--no-sandbox',
@@ -244,13 +244,13 @@ exports.config = {
      */
     before: (capabilities, specs) => {
         browser.pageObjects = {
-            'Главная страница': require('./tests/pageObject/pages/mainPage'),
+            'Главная Страница': require('./tests/pageObject/pages/mainPage'),
             'Форма Регистрации/Авторизации': require('./tests/pageObject/pages/registrationAuthorizationPage/registrationAuthorizationForm'),
             'Форма Дорегистрации': require('./tests/pageObject/pages/registrationAuthorizationPage/afterRegistrationForm'),
             'Уведомления': require('./tests/pageObject/pages/alerts/alert'),
             'Страница Профиль Пользователя': require('./tests/pageObject/pages/userProfile/userProfilePage'),
             'Форма Депозита': require('./tests/pageObject/pages/deposit/depositForm'),
-            'Страница редактирования профиля': require('./tests/pageObject/pages/userProfile/editUserProfilePage'),
+            'Страница Редактирования Профиля': require('./tests/pageObject/pages/userProfile/editUserProfilePage'),
             'Страница Элементов': require('./tests/pageObject/pages/otherElements'),
             'Лендинг': require('./tests/pageObject/pages/landing/landingPage'),
             'Прочие Элементы': require('./tests/pageObject/pages/otherElements')

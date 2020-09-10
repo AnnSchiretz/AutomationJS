@@ -1,8 +1,8 @@
 module.exports = {
-    'Правильная почта': 'e.miasoedov+test_9999@jetmail.cc',
-    'Правильный пароль': 'password_1',
+    'Правильная Почта': 'e.miasoedov+test_9999@jetmail.cc',
+    'Правильный Пароль': 'password_1',
     'Пароль Новорег': '123123123',
-    'Случайная почта': browser.helper.randomEmail,
+    'Случайная Почта': browser.helper.randomEmail,
     'Логин VK': "+79587998611",
     'Пароль VK': "qwerty!123456",
     'Регистрация ОК': (process.env.URL + "users/auth/odnoklassniki"),
@@ -14,17 +14,17 @@ module.exports = {
     'Регистрация Telegram': (process.env.URL + "users/auth/tlgrm"),
     'Имя': 'AutoTestName' + 'тестTest',
     'Фамилия': 'AutoTestLastName' + 'тестTEST',
-    'Телефон': "9162977146",
+    'Телефон': browser.helper.randomPhoneNumber,
     'Включен': true,
     'Выключен': false,
     // Подтвержденная почта и номер
     'Почта Подтвержденная': "o.lipnitskaya+test_99@jetmail.cc",
-    'Пароль от Подтвержденной Почты': "casino123",
+    'Пароль От Подтвержденной Почты': "casino123",
 
     //SOL
-    'Правильный тайтл SOL Sport': "Сол Казино (Sol Casino) официальный сайт c бонусом за регистрацию",
+    'Правильный Тайтл SOL Sport': "Сол Казино (Sol Casino) официальный сайт c бонусом за регистрацию",
 
     //JET
-    'Правильный тайтл JET Bonuses': "Jet Casino is an official website to play slot machines online with a bonus for registration - Jet.casino",
+    'Правильный Тайтл JET Bonuses': "Jet Casino is an official website to play slot machines online with a bonus for registration  - Jet.casino",
 
 };

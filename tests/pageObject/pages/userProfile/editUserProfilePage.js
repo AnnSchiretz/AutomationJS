@@ -1,8 +1,9 @@
 class EditUserProfilePage {
     constructor() {
         this.elements = {
-            'Подтвердить почту': this.confirmEmailButton,
-            'Дата Рождения': this.setBirthdayData,
+            'Подтвердить Почту': this.confirmEmailButton,
+            'Дата Рождения Профиль': this.setBirthdayData,
+            'Дата Рождения Депозит': this.setBirthdayDataDeposit,
             'Год': this.yearButton,
             'Месяц': this.monthButton,
             'День': this.dayButton,
@@ -11,13 +12,13 @@ class EditUserProfilePage {
             'Поле Номер Телефона': this.phoneNumberField,
             'Поле Никнэйм': this.nicknameField,
             'Поле Email': this.emailField,
-            'Получать системные уведомления': this.getSystemAlert,
-            'Получать письма с акциями и подарками': this.getPromotionsAndGifts,
-            'Получать SMS уведомления': this.getSMSAlert,
-            'Отключить бонусы': this.disabledBonuses,
+            'Получать Системные Уведомления': this.getSystemAlert,
+            'Получать Письма С Акциями И Подарками': this.getPromotionsAndGifts,
+            'Получать SMS Уведомления': this.getSMSAlert,
+            'Отключить Бонусы': this.disabledBonuses,
             'МУЖ Пол': this.maleGenderButton,
             'ЖЕН Пол': this.femaleGenderButton,
-            'Сохранить изменения': this.saveChanges,
+            'Сохранить Изменения': this.saveChanges,
 
         };
 
@@ -25,11 +26,15 @@ class EditUserProfilePage {
 
 
     get confirmEmailButton() {
-        return ('[data-test=”send_confirmation”]');
+        return ('[data-test="send_confirmation"]');
     }
 
     get setBirthdayData() {
         return ('//input[@data-test="profile_calendar_edit"]/../..');
+    }
+
+    get setBirthdayDataDeposit() {
+        return ('//input[@data-test="profile_calendar_edit_depos"]/../..');
     }
 
     get yearButton() {
@@ -91,6 +96,7 @@ class EditUserProfilePage {
         return ('[type="submit"]');
         //'[data-test="profile_submit"]'
     }
+
 }
 
 
