@@ -33,10 +33,9 @@ When(/^Я нажимаю "([^"]*)" в боковом меню$/, (element) => {
 
 });
 
-When(/^Я выбираю дату рождения$/, () => {
+When(/^Я выбираю "([^"]*)"$/, (element) => {
 
-    const element = "Дата Рождения";
-    const pageObject = "Страница редактирования профиля";
+    const pageObject = "Страница Редактирования Профиля";
     const component = browser.pageObjects[pageObject].elements[element];
     elementManager.click(component);
     const year = browser.pageObjects[pageObject].elements["Год"];
