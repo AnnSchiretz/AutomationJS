@@ -40,6 +40,7 @@ Debug 'test'
 
 ##Добавление тестов
 Тесты написаны с использованием [синтаксиса Gherkin](https://cucumber.io/docs/gherkin/) таким образом, чтобы его можно было использовать как документацию по функциям:
+
 ```gherkin
 @smoke
 Feature: Guess the word
@@ -120,7 +121,9 @@ npm run test -- --cucumberOpts.tagExpression='not @fast and smoke'
 запустит тесты с тегом smoke и исключит из списка запуска тесты с тэгом fast
 
 - Пример команды для запуска тестов:
-`URL_LAND='https://jet-wheel.com/' PROJECT='SOL' URL='https://dev:dev123@dev.kube.dev001.ru/ru'  npm run chrome -- --cucumberOpts.tagExpression='@socialRegistration'`
+```
+URL_LAND='https://jet-wheel.com/' PROJECT='SOL' URL='https://dev:dev123@dev.kube.dev001.ru/ru'  npm run chrome -- --cucumberOpts.tagExpression='@socialRegistration'
+```
 
 `URL_LAND` - для тестов с лендингами
 
@@ -188,3 +191,9 @@ sudo chmod -R 777 /Users/e.miasoedov/jsbot
 sudo chmod -x /Users/e.miasoedov/jsbot
 ```
 - Если при выполнении команды npm install не установился модуль @wdio/sync, то необходимо перейти по [ссылке](https://medium.com/flawless-app-stories/gyp-no-xcode-or-clt-version-detected-macos-catalina-anansewaa-38b536389e8d) и выполнить шаги согласно инструкции
+
+-  При работе с Safari необходимо предварительно выполнить команду в консоле:
+```
+safaridriver --enable
+``` 
+Она включает возможность удаленной автоматизации
