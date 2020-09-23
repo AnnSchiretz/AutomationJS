@@ -5,6 +5,8 @@
   "scripts": {
     "chrome": "npx wdio wdio.conf.js --parallel=false",
     "firefox": "npx wdio ./tests/config/firefox.conf.js",
+    "iOSBrowser": "npx wdio tests/config/iOSBrowser.js",
+    "androidBrowser": "npx wdio tests/config/androidBrowser.config.js",
     "debag": "PROJECT='JET' URL='https://jet.casino/'  npm run chrome -- --cucumberOpts.tagExpression='@bonuses and @jet'"
   },
   "keywords": [
@@ -17,21 +19,25 @@
   "license": "MIT",
   "devDependencies": {
     "@rpii/wdio-html-reporter": "^1.0.4",
+    "@wdio/appium-service": "^6.4.7",
     "@wdio/cli": "6.4.4",
     "@wdio/cucumber-framework": "^6.4.3",
-    "@wdio/devtools-service": "^6.4.3",
     "@wdio/local-runner": "^6.4.4",
     "@wdio/selenium-standalone-service": "^6.4.7",
     "@wdio/spec-reporter": "^6.4.0",
     "@wdio/sync": "^6.4.0",
+    "appium": "^1.18.2",
+    "appium-xcuitest-driver": "^3.28.1",
     "buffer": "^5.6.0",
     "chai": "^4.2.0",
+    "chromedriver": "^85.0.1",
     "cucumber": "^6.0.5",
     "cucumber-html-reporter": "5.2.0",
     "eslint": "^7.7.0",
     "json-override": "^0.2.0",
     "wdio-cucumber-parallel-execution": "^3.6.14",
-    "wdio-cucumberjs-json-reporter": "2.0.2"
+    "wdio-cucumberjs-json-reporter": "2.0.2",
+    "webdriverio": "^6.5.2"
   },
   "dependencies": {
     "fs-extra": "^9.0.1",

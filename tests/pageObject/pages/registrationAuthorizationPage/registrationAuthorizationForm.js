@@ -1,3 +1,5 @@
+const getSelector = require('../../../helper/getSelector');
+
 class RegistrationAuthorizationForm {
     constructor() {
         this.elements = {
