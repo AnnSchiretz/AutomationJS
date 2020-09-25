@@ -181,6 +181,76 @@ curl -s https://aerokube.com/cm/bash | bash \
 }
    ``` 
    
+ ##Appium
+[Документация по Appium](http://appium.io/docs/en/about-appium/intro/)
+
+Установить Appium:
+```
+npm install -g appium
+```
+
+##iOS
+
+Конфигурация на iOS устройства(эмулятор/реальный девайс):
+```js
+[{
+    platformName : 'iOS',
+    browserName : 'safari',
+    maxInstances: 1,
+    automationName: 'XCUITest',
+    udid: "00008020-001465CA1488003A",
+    deviceName: 'iPhone 10',
+    platformVersion: '13.6.1',
+    port: 4723,
+    path: '/wd/hub',
+    appium: {
+    args: {},
+} 
+}]
+```
+Установка дополнительных пакетов:
+Установка менеджера пакетов для macOS -  [Homebrew](https://brew.sh/index_ru)
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+```
+
+```
+brew update
+```
+
+Затем мы установим [libimobiledevice](https://libimobiledevice.org/) , пакет с открытым исходным кодом, который может взаимодействовать с устройствами iOS. Единственными официальными приложениями, созданными Apple для связи с устройствами iOS, являются Xcode и iTunes. Эти приложения не были созданы для простого программного использования, поэтому Appium использует libimobiledevice для определенных операций.
+```
+brew install libimobiledevice
+```
+Appium также использует пакет под названием ios-deploy для переноса приложений iOS на ваше устройство, так что давайте установим и его.
+
+```
+brew install ios-deploy
+```
+Самому WDA требуется менеджер зависимостей iOS под названием [Carthage](https://github.com/Carthage/Carthage) . Поскольку Appium будет автоматически создавать приложение WDA, нам нужно установить Carthage, чтобы оно было доступно процессу начальной загрузки WDA.   
+
+Для реальных устройств мы можем использовать xcpretty, чтобы сделать вывод Xcode более разумным. Это может быть установлено
+
+```
+gem install xcpretty
+```
+
+Настройка WebDriverRunnerAgent проекта:
+Перейти в директорию:
+```
+/usr/local/lib/node_modules/appium/node_modules/appium-webdriveragent
+```
+Открыть проект `WebDriverAgent.xcodeproj` в Xcode'е - помочь может команда:
+```
+open .
+```
+
+Изменить версию `Deployment Info` на версию ОС устройства в General-> `iOS Deployment Target`/`Target` во всех Targets
+Выбрать чекбокс `Automatically manage signing` в `Signing and Capabilities`
+Войти в девелоперский Apple аккаунт в разделе `Signing and Capabilities` ->  `Team`
+
+  
 ##Troubleshooting
     
 - Если при копировании проекта не создалась папка /reports/json/tmp, то    
@@ -192,8 +262,12 @@ sudo chmod -x /Users/e.miasoedov/jsbot
 ```
 - Если при выполнении команды npm install не установился модуль @wdio/sync, то необходимо перейти по [ссылке](https://medium.com/flawless-app-stories/gyp-no-xcode-or-clt-version-detected-macos-catalina-anansewaa-38b536389e8d) и выполнить шаги согласно инструкции
 
--  При работе с Safari необходимо предварительно выполнить команду в консоле:
+-  При работе с Safari(desktop) необходимо предварительно выполнить команду в консоле:
 ```
 safaridriver --enable
 ``` 
 Она включает возможность удаленной автоматизации
+
+##Полезные ссылки
+- [Как протестировать на реальных устройствах iOS с помощью Appium, часть 1](https://appiumpro.com/editions/40-how-to-test-on-real-ios-devices-with-appium-part-1)
+- [Как тестировать реальные устройства iOS с помощью Appium, часть 2](https://appiumpro.com/editions/41-how-to-test-real-ios-devices-with-appium-part-2)
