@@ -1,7 +1,11 @@
-module.exports = (browserSelector, mobileSelector) => {
+module.exports = (desktopSelector, androidSelector, iOSSelector) => {
     if (browser.isMobile) {
-        return browser.isAndroid ? mobileSelector : `//*[@name="${mobileSelector}"]`;
+        if (browser.isAndroid) {
+            return androidSelector;
+        } else {
+            return iOSSelector;
+        }
     } else {
-        return browserSelector;
+        return desktopSelector;
     }
 };
