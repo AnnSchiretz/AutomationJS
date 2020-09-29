@@ -30,9 +30,6 @@ class sidebarJET {
         return ('[data-test="no_logout_btn_main"]');
     }
 
-    get profileButton() {
-        return ('[data-test="my_profile"]');
-    }
 
     get myProfileButton() {
         return ('[data-test="my_profile"]');

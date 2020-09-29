@@ -30,7 +30,7 @@ class EditUserProfilePage {
     }
 
     get setBirthdayData() {
-        return ('//input[@data-test="profile_calendar_edit"]/../..');
+        return ('//div[@data-test="profile_calendar_edit"]');
     }
 
     get setBirthdayDataDeposit() {
@@ -92,7 +92,7 @@ class EditUserProfilePage {
     get femaleGenderButton() {
         return ('[data-test="profile_gender_female"]');
     }
-    get saveChanges() {
+    get  saveChanges() {
         return ('[type="submit"]');
         //'[data-test="profile_submit"]'
     }

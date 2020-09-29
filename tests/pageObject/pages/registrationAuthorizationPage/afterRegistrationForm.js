@@ -16,7 +16,7 @@ class AfterRegistrationForm {
 
 
     get closeAlert() {
-        return ('//div[@data-test="success_registr_modal_close"]');
+        return ('[data-test="success_registr_modal_close"]');
     }
 
     get continueWithoutBonuses() {
@@ -50,7 +50,7 @@ class AfterRegistrationForm {
     }
 
     get goToPay() {
-        return ('[data-test="profile_button_go_pay_depos"][type="submit"]');
+        return ('[data-test="profile_submit_step_one_depos"]');
     }
 
 //jet  data-test="profile_submit_step_one_depos"
