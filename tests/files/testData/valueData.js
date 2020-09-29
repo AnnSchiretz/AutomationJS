@@ -18,7 +18,7 @@ module.exports = {
     'Включен': true,
     'Выключен': false,
     // Подтвержденная почта и номер
-    'Почта Подтвержденная': "o.lipnitskaya+test_99@jetmail.cc",
+    'Почта Подтвержденная': "o.lipnitskaya+test_135@jetmail.cc",
     'Пароль От Подтвержденной Почты': "casino123",
 
     //SOL

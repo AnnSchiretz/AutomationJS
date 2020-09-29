@@ -7,14 +7,17 @@ When(/^Я нажимаю "([^"]*)" на "([^"]*)"$/, (element, pageObject) => {
 
     const component = browser.pageObjects[pageObject].elements[element];
     elementManager.click(component);
-
 });
 
 When(/^Я ввожу "([^"]*)" в "([^"]*)" на "([^"]*)"$/, (value, element, pageObject) => {
 
     const component = browser.pageObjects[pageObject].elements[element];
-    return elementManager.setValue(component, dataTest[value]);
-
+    elementManager.setValue(component, dataTest[value]);
+    if (browser.isMobile) {
+        if(browser.isKeyboardShown()){
+            browser.hideKeyboard();
+        }
+    }
 });
 
 // Действия с элементами из Header
@@ -51,4 +54,3 @@ When(/^Я перезагружаю страницу$/, () => {
     browser.refresh();
 
 });
-

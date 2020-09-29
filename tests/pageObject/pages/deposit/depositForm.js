@@ -69,7 +69,7 @@ class DepositForm {
 
     get bankCardJETCashOut() {
         const quote = "'";
-        return ("[data-test=" + quote + Buffer.from("win_pay" + "bank_card").toString('base64') + "_payment_method" + quote + "]");
+        return ("[data-test=" + quote + Buffer.from("accentpay_gate" + "bank_card").toString('base64') + "_payment_method" + quote + "]");
     }
 
     get bankCardSOLCashOut() {
@@ -131,7 +131,7 @@ class DepositForm {
     }
 
     get depositForm() {
-        return ('[data-test="payment-modal__body-wrap"]');
+        return ('//div[@data-test="payment-modal__body-wrap"]');
     }
 
 }

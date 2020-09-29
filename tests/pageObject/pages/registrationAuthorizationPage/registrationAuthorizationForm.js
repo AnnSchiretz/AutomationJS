@@ -4,8 +4,10 @@ class RegistrationAuthorizationForm {
     constructor() {
         this.elements = {
             'Регистрация': this.registrationButton,
-            'Поле Почта': this.emailInput,
-            'Поле Пароль': this.passwordInput,
+            'Поле Почта Авторизация': this.emailInputAuthorization,
+            'Поле Почта Регистрация' : this.emailInputRegistration,
+            'Поле Пароль Авторизация': this.passwordInputAuthorization,
+            'Поле Пароль Регистрация' : this.passwordInputRegistration,
             'Чекбокс Получать Информацию': this.getInformationCheckbox,
             'Зарегистрироваться': this.submitButton,
             'Войти': this.signInButton,
@@ -29,17 +31,22 @@ class RegistrationAuthorizationForm {
 
     }
 
+    get emailInputRegistration(){
+        return ('//input[@data-test="registr_email_field"]');
+    }
 
     get registrationButton() {
-        return ('[data-test="main_register"]');
+        return ('//button[@data-test="main_register"]');
     }
 
     get signInButton() {
-        return ('[data-test="enter_submit"]');
+        return ('//button[@type="submit"]');
+
     }
 
-    get emailInput() {
-        return ('[name="email"]');
+    get emailInputAuthorization() {
+        return ('//input[@data-test="email-field"]');
+
     }
 
     get getInformationCheckbox() {
@@ -50,8 +57,11 @@ class RegistrationAuthorizationForm {
         return ('[data-test="registr_submit_btn"]');
     }
 
-    get passwordInput() {
-        return ('[name="password"]');
+    get passwordInputAuthorization() {
+        return ('//input[@data-test="password-field"]');
+    }
+    get passwordInputRegistration(){
+        return ('//input[@data-test="registr_passwd_field"]');
     }
 
     get registrationVK() {
