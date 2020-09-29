@@ -6,7 +6,8 @@ class Alert {
             'Проверить Почту': this.checkEmailButton,
             'Уведомление - Данные Успешно Добавлены': this.dataSuccessfullyUpdate,
             'Письмо Было Отправлено': this.emailSendAlert,
-            'Письмо Было Отправлено. Проверьте Папку СПАМ': this.letterWasSent
+            'Письмо Было Отправлено. Проверьте Папку СПАМ': this.letterWasSent,
+            'Не Сейчас': this.noNowButton
         };
 
     }
@@ -34,6 +35,10 @@ class Alert {
 
     get letterWasSent() {
         return ('[data-test="send_email_to_mail"]');
+    }
+
+    get noNowButton() {
+        return ('//button[@class="notification-block__button btn btn--middle btn--style-normal btn--not-uppercase btn--gray"]');
     }
 }
 
