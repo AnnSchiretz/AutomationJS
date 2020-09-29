@@ -7,7 +7,7 @@ config.capabilities = [
         browserName: 'chrome',
         maxInstances: 1,
         automationName: 'uiautomator2',
-        deviceName: 'ce031713655bc80d0c',//emulator-5554    ce031713655bc80d0c
+        deviceName: 'emulator-5554',//emulator-5554    ce031713655bc80d0c
         platformVersion: '',
         port: 4723,
         path: '/wd/hub',
