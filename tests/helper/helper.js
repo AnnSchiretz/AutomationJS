@@ -11,7 +11,7 @@ class Helper {
 
     get randomPhoneNumber() {
 
-        const randomNumber = Math.floor(Math.random() * 9999);
+        const randomNumber = Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
         return (`91${randomNumber}${randomNumber}`);
 
     }
