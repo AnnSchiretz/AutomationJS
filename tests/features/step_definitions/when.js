@@ -12,10 +12,11 @@ When(/^Я нажимаю "([^"]*)" на "([^"]*)"$/, (element, pageObject) => {
 When(/^Я ввожу "([^"]*)" в "([^"]*)" на "([^"]*)"$/, (value, element, pageObject) => {
 
     const component = browser.pageObjects[pageObject].elements[element];
-    console.log(component.toString());
     elementManager.setValue(component, dataTest[value]);
-    if (browser.isKeyboardShown()) {
-        browser.hideKeyboard();
+    if (browser.isMobile) {
+        if(browser.isKeyboardShown()){
+            browser.hideKeyboard();
+        }
     }
 });
 

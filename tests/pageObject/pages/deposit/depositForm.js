@@ -1,5 +1,3 @@
-const getSelector = require('../../../helper/getSelector');
-
 class DepositForm {
 
     constructor() {
@@ -40,7 +38,7 @@ class DepositForm {
     get cashOutButton() {
         return ('[data-test="payment-modal__tab-is-cashout"]');
     }
-    //data-test="payment-modal__tab-is-cashout"
+
 
     get depositButton() {
         return ('[data-test="payment__tab-is-deposit"]');
@@ -71,7 +69,7 @@ class DepositForm {
 
     get bankCardJETCashOut() {
         const quote = "'";
-        return ("//div[@data-test=" + quote + Buffer.from("accentpay_gate" + "bank_card").toString('base64') + "_payment_method" + quote + "]");
+        return ("[data-test=" + quote + Buffer.from("accentpay_gate" + "bank_card").toString('base64') + "_payment_method" + quote + "]");
     }
 
     get bankCardSOLCashOut() {

@@ -1,15 +1,10 @@
 class ElementManager {
 
 
-    click(selector, ms = 25000) {
+    click(selector, ms = 15000) {
         this.waitForClickable(selector, ms);
         this.waitForDisplayed(selector, ms);
         const element = this.getElement(selector);
-        browser.waitUntil(
-            () => $(selector).isDisplayed() === true, {
-                timeout : ms
-            }
-        );
         return element.click();
     }
 

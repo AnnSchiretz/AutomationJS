@@ -36,7 +36,7 @@ class RegistrationAuthorizationForm {
     }
 
     get registrationButton() {
-        return ('[data-test="main_register"]');
+        return ('//button[@data-test="main_register"]');
     }
 
     get signInButton() {
