@@ -5,7 +5,6 @@ class ElementManager {
         this.waitForClickable(selector, ms);
         this.waitForDisplayed(selector, ms);
         const element = this.getElement(selector);
-        browser.findElement()
         return element.click();
     }
 
