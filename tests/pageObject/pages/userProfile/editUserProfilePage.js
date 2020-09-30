@@ -1,3 +1,5 @@
+const getSelector = require('./../../../helper/getSelector');
+
 class EditUserProfilePage {
     constructor() {
         this.elements = {
@@ -30,7 +32,7 @@ class EditUserProfilePage {
     }
 
     get setBirthdayData() {
-        return ('//input[@data-test="profile_calendar_edit"]/../..');
+        return getSelector('//div[@data-test="profile_calendar_edit"]','//div[@data-test="profile_calendar_edit"]','//*[@data-test="profile_calendar_edit"]//input');
     }
 
     get setBirthdayDataDeposit() {
@@ -92,7 +94,7 @@ class EditUserProfilePage {
     get femaleGenderButton() {
         return ('[data-test="profile_gender_female"]');
     }
-    get saveChanges() {
+    get  saveChanges() {
         return ('[type="submit"]');
         //'[data-test="profile_submit"]'
     }

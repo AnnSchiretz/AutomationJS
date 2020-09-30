@@ -2,9 +2,7 @@ const {When} = require('cucumber');
 const elementManager = require('../../services/elementManager');
 const dataTest = require('../../files/testData/valueData');
 
-
 When(/^Я нажимаю "([^"]*)" на "([^"]*)"$/, (element, pageObject) => {
-
     const component = browser.pageObjects[pageObject].elements[element];
     elementManager.click(component);
 });
@@ -12,6 +10,7 @@ When(/^Я нажимаю "([^"]*)" на "([^"]*)"$/, (element, pageObject) => {
 When(/^Я ввожу "([^"]*)" в "([^"]*)" на "([^"]*)"$/, (value, element, pageObject) => {
 
     const component = browser.pageObjects[pageObject].elements[element];
+    elementManager.clearValue(component);
     elementManager.setValue(component, dataTest[value]);
     if (browser.isMobile) {
         if(browser.isKeyboardShown()){
