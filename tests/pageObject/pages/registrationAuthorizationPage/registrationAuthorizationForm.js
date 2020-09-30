@@ -50,7 +50,7 @@ class RegistrationAuthorizationForm {
     }
 
     get getInformationCheckbox() {
-        return ('[data-test="registr_promotion_info"]');
+        return ('//input[@data-test="registr_promotion_info"]');
     }
 
     get submitButton() {

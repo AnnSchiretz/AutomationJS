@@ -1,3 +1,4 @@
+const getSelector = require('../../../helper/getSelector');
 class Alert {
     constructor() {
         this.elements = {
@@ -14,7 +15,7 @@ class Alert {
 
 
     get closeAlert() {
-        return ('[data-test="modal-close"]');
+        return ('//div[@data-test="successful_registration"]/div[@data-test="modal-close"]');
     }
 
     get emailNotConfirmed() {
