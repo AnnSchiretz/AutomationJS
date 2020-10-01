@@ -21,7 +21,7 @@ class EditUserProfilePage {
             'МУЖ Пол': this.maleGenderButton,
             'ЖЕН Пол': this.femaleGenderButton,
             'Сохранить Изменения': this.saveChanges,
-
+            'Сохранить Подписки и Соцсети' : this.saveChangeSubscriptionsAndSocNetwork
         };
 
     }
@@ -32,7 +32,7 @@ class EditUserProfilePage {
     }
 
     get setBirthdayData() {
-        return getSelector('//div[@data-test="profile_calendar_edit"]','//div[@data-test="profile_calendar_edit"]','//*[@data-test="profile_calendar_edit"]//input');
+        return getSelector('//div[@data-test="profile_calendar_edit"]','//div[@data-test="profile_calendar_edit"]/..','.date-picker__input');
     }
 
     get setBirthdayDataDeposit() {
@@ -60,7 +60,7 @@ class EditUserProfilePage {
     }
 
     get phoneNumberField() {
-        return ('[data-test="profile_phone_depos"]');
+        return ('//input[@data-test="profile_phone_depos"]');
     }
 
     get nicknameField() {
@@ -72,19 +72,19 @@ class EditUserProfilePage {
     }
 
     get getSystemAlert() {
-        return ('//input[@data-test="profile_receive_newsletters"]/../..');
+        return getSelector('//input[@data-test="profile_receive_newsletters"]/../..', '[data-test="profile_receive_newsletters"]','[data-test="profile_receive_newsletters"]');
     }
 
     get getPromotionsAndGifts() {
-        return ('//input[@data-test="profile_receive_promos"]/../..');
+        return getSelector('//input[@data-test="profile_receive_promos"]/../..', '[data-test="profile_receive_promos"]', '[data-test="profile_receive_promos"]');
     }
 
     get getSMSAlert() {
-        return ('//input[@data-test="profile_receive_sms_promos"]/../..');
+        return getSelector('//input[@data-test="profile_receive_sms_promos"]/../..', '[data-test="profile_receive_sms_promos"]', '//label[@data-test="profile_receive_sms_promos"]');
     }
 
     get disabledBonuses() {
-        return ('//input[@data-test="turn_on_off_bonuses"]/../..');
+        return getSelector('//input[@data-test="turn_on_off_bonuses"]/../..', '[data-test="turn_on_off_bonuses"]', '[data-test="turn_on_off_bonuses"]');
     }
 
     get maleGenderButton() {
@@ -94,9 +94,12 @@ class EditUserProfilePage {
     get femaleGenderButton() {
         return ('[data-test="profile_gender_female"]');
     }
-    get  saveChanges() {
-        return ('[type="submit"]');
+    get saveChanges() {
+        return ('//button[@data-test="profile_submit"]');
         //'[data-test="profile_submit"]'
+    }
+    get saveChangeSubscriptionsAndSocNetwork(){
+        return('//button[@data-test="save_changes"]');
     }
 
 }
