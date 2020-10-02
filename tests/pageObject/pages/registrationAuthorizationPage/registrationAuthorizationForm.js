@@ -50,7 +50,7 @@ class RegistrationAuthorizationForm {
     }
 
     get getInformationCheckbox() {
-        return ('//input[@data-test="registr_promotion_info"]');
+        return getSelector('//div[@data-test="registr_promotion_info"]','//div[@data-test="registr_promotion_info"]', '//div[@data-test="registr_promotion_info"]/label', '//div[@data-test="registr_promotion_info"]/label');
     }
 
     get submitButton() {
@@ -93,15 +93,15 @@ class RegistrationAuthorizationForm {
     }
 
     get loginVKInput() {
-        return ('//div[@class="oauth_form"]//input[@name="email"]');
+        return getSelector('//div[@class="oauth_form"]//input[@name="email"]', '//input[@name="email"]', '//input[@type="text"]');
     }
 
     get passwordVKInput() {
-        return ('//div[@class="oauth_form"]//input[@name="pass"]');
+        return getSelector('//div[@class="oauth_form"]//input[@name="pass"]', '//input[@name="pass"]', '//input[@name="pass"]');
     }
 
     get submitVKButton() {
-        return ('[type="submit"]');
+        return getSelector('[type="submit"]', '//input[@class="button"]', '//input[@class="button"]');
     }
 
     get currencySelector() {
