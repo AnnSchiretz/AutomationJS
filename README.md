@@ -233,7 +233,7 @@ brew update
 ```
 brew install libimobiledevice
 ```
-Appium также использует пакет под названием ios-deploy для переноса приложений iOS на ваше устройство, так что давайте установим и его.
+Appium также использует пакет под названием ios-deploy для переноса приложений iOS на устройство
 
 ```
 brew install ios-deploy

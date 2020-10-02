@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A WebdriverIO & Cucumber Boilerplate based on Page Object Model",
   "scripts": {
-    "chrome": "npx wdio wdio.conf.js --parallel=false",
+    "chrome": "npx wdio wdio.conf.js --parallel=true",
     "firefox": "npx wdio ./tests/config/firefox.conf.js",
     "iOSBrowser": "npx wdio tests/config/iOSBrowser.js",
     "androidBrowser": "npx wdio tests/config/androidBrowser.config.js",
