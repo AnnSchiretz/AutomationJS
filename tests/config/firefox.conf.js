@@ -2,8 +2,8 @@ const {config} = require('../../wdio.conf');
 
 config.capabilities = [{
 
-        browserName: 'firefox',
+    browserName: 'safari',
 
-    }];
+}];
 
 exports.config = config;

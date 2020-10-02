@@ -15,14 +15,15 @@ config.capabilities = [
         browserName: 'safari',
         maxInstances: 1,
         automationName: 'XCUITest',
-        udid: "00008030-001D18240AA3802E",
+        udid: "00008030-000E78D01150402E",
         deviceName: 'iPhone',
-        platformVersion: '13.1',
+        platformVersion: '13.6',
         // xcodeOrgId: 'UNIONSTAR LIMITED',
         // xcodeSigningId: 'Marina Fedko (NH75D89LKU)',
         // bundleIdentifier: "TEST.TEST",
         port: 4723,
         path: '/wd/hub',
+        // bundleId: 'com.mobappcats.SolarusBet',
         appium: {
             // For options see
             // https://github.com/webdriverio/webdriverio/tree/master/packages/wdio-appium-service
@@ -35,6 +36,7 @@ config.capabilities = [
 
 ];
 config.services = [];
+config.cucumberOpts.timeout = "10000";
 
 
 exports.config = config;
