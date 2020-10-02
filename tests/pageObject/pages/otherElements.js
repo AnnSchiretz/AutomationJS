@@ -36,7 +36,7 @@ class OtherElements {
     }
 
     get telegramForm() {
-        return getSelector('[id="widget_login"]', '[id="telegram-login-JETplaybot"]', '[id="telegram-login-JETplaybot"]');
+        return ('[id="telegram-login-JETplaybot"]');
     }
 
     get logo() {
