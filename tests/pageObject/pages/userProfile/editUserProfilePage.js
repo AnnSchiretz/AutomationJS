@@ -32,7 +32,7 @@ class EditUserProfilePage {
     }
 
     get setBirthdayData() {
-        return getSelector('//div[@data-test="profile_calendar_edit"]','//div[@data-test="profile_calendar_edit"]/..','.date-picker__input');
+        return getSelector('//div[@data-test="profile_calendar_edit"]/..', '//div[@data-test="profile_calendar_edit"]/..', '.date-picker__input');
     }
 
     get setBirthdayDataDeposit() {
@@ -72,19 +72,19 @@ class EditUserProfilePage {
     }
 
     get getSystemAlert() {
-        return getSelector('//input[@data-test="profile_receive_newsletters"]/../..', '[data-test="profile_receive_newsletters"]','[data-test="profile_receive_newsletters"]');
+        return getSelector('[data-test="profile_receive_newsletters"]', '[data-test="profile_receive_newsletters"]', '[data-test="profile_receive_newsletters"]');
     }
 
     get getPromotionsAndGifts() {
-        return getSelector('//input[@data-test="profile_receive_promos"]/../..', '[data-test="profile_receive_promos"]', '[data-test="profile_receive_promos"]');
+        return getSelector('[data-test="profile_receive_promos"]', '[data-test="profile_receive_promos"]', '[data-test="profile_receive_promos"]');
     }
 
     get getSMSAlert() {
-        return getSelector('//input[@data-test="profile_receive_sms_promos"]/../..', '[data-test="profile_receive_sms_promos"]', '//label[@data-test="profile_receive_sms_promos"]');
+        return getSelector('[data-test="profile_receive_sms_promos"]', '[data-test="profile_receive_sms_promos"]', '//label[@data-test="profile_receive_sms_promos"]');
     }
 
     get disabledBonuses() {
-        return getSelector('//input[@data-test="turn_on_off_bonuses"]/../..', '[data-test="turn_on_off_bonuses"]', '[data-test="turn_on_off_bonuses"]');
+        return getSelector('[data-test="turn_on_off_bonuses"]', '[data-test="turn_on_off_bonuses"]', '[data-test="turn_on_off_bonuses"]');
     }
 
     get maleGenderButton() {
