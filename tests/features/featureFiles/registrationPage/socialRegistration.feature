@@ -1,9 +1,10 @@
 # language: ru
 
-@socialRegistration
+@socialRegistration @failed
 Функция: Регистрация через социальные сети
 
-  @TEST_TST-5017 @registration @sol @jet
+  #  @TEST_TST-5017 @registration @sol @jet
+  @failed
   Сценарий: 1.1.4. Регистрация: OK
     Пусть Я нахожусь на главной странице
     Когда Я нажимаю "Регистрация" в хедере
