@@ -17,7 +17,7 @@ config.capabilities = [
         automationName: 'XCUITest',
         udid: "00008030-001D18240AA3802E",
         deviceName: 'iPhone',
-        platformVersion: '13.4.1',
+        platformVersion: '13.1',
         // xcodeOrgId: 'UNIONSTAR LIMITED',
         // xcodeSigningId: 'Marina Fedko (NH75D89LKU)',
         // bundleIdentifier: "TEST.TEST",

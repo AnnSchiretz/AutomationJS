@@ -1,3 +1,4 @@
+const getSelector = require('../../helper/getSelector');
 class OtherElements {
 
     constructor() {
@@ -19,7 +20,7 @@ class OtherElements {
     }
 
     get facebookForm() {
-        return ('[id="loginform"]');
+        return getSelector('[id="loginform"]', '[id="viewport"]', '[id="viewport"]');
     }
 
     get mailRuForm() {
@@ -35,7 +36,7 @@ class OtherElements {
     }
 
     get telegramForm() {
-        return ('[id="widget_login"]');
+        return getSelector('[id="widget_login"]', '[id="telegram-login-JETplaybot"]', '[id="telegram-login-JETplaybot"]');
     }
 
     get logo() {

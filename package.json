@@ -7,7 +7,7 @@
     "firefox": "npx wdio ./tests/config/firefox.conf.js",
     "iOSBrowser": "npx wdio tests/config/iOSBrowser.js",
     "androidBrowser": "npx wdio tests/config/androidBrowser.config.js",
-    "debag": "PROJECT='JET' URL='https://jet.casino/'  npm run androidBrowser -- --cucumberOpts.tagExpression='@TEST_TST-5024 and @jet'"
+    "debag": "PROJECT='JET' URL='https://jet.casino/'  npm run iOSBrowser -- --cucumberOpts.tagExpression='@TEST_TST-5025 and @jet'"
   },
   "keywords": [
     "webdriverio",
