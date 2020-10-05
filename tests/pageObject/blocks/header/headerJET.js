@@ -25,7 +25,7 @@ class headerJET {
     }
 
     get sportButton() {
-        return ('[class="top-bar"]');
+        return ('[data-test="sport"]');
     }
 
     get signIn() {
