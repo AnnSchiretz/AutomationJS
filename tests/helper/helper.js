@@ -1,18 +1,21 @@
 class Helper {
 
 
+    get randomNumber() {
+        return Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
+    }
+
+
     get randomEmail() {
 
-        const randomNumber = Math.floor(Math.random() * 9999);
-        return ("autotest+" + randomNumber + randomNumber + "@jetmail.cc");
+        return ("autotest+" + this.randomNumber + this.randomNumber + "@jetmail.cc");
 
     }
 
 
     get randomPhoneNumber() {
 
-        const randomNumber = Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
-        return (`91${randomNumber}${randomNumber}`);
+        return (`91${this.randomNumber}${this.randomNumber}`);
 
     }
 }
