@@ -13,7 +13,7 @@ When(/^Я ввожу "([^"]*)" в "([^"]*)" на "([^"]*)"$/, (value, element, p
     elementManager.clearValue(component);
     elementManager.setValue(component, dataTest[value]);
     if (browser.isMobile) {
-        if(browser.isKeyboardShown()){
+        if (browser.isKeyboardShown()) {
             browser.hideKeyboard();
         }
     }
@@ -51,5 +51,13 @@ When(/^Я выбираю "([^"]*)"$/, (element) => {
 When(/^Я перезагружаю страницу$/, () => {
 
     browser.refresh();
+
+});
+When(/^Я нажимаю "([^"]*)" в окне уведомления$/, (element) => {
+
+    const component = browser.pageObjects["Уведомления"].elements[element];
+    if (elementManager.getSize(component) !== 0) {
+        elementManager.click(component);
+    }
 
 });
