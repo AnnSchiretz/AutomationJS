@@ -4,6 +4,9 @@ class ElementManager {
     click(selector, ms = 15000) {
         this.waitForClickable(selector, ms);
         this.waitForDisplayed(selector, ms);
+        if (browser.isChrome !== true){
+            browser.pause(1000);
+        }
         const element = this.getElement(selector);
         return element.click();
     }

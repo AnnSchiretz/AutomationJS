@@ -1,3 +1,4 @@
+const getSelectors = require('../../../helper/getSelector');
 class DepositForm {
 
     constructor() {
@@ -36,7 +37,7 @@ class DepositForm {
 
 
     get cashOutButton() {
-        return ('[data-test="payment-modal__tab-is-cashout"]');
+        return getSelectors('//button[@data-test="payment-modal__tab-is-cashout"]', '[data-test="payment-modal__tab-is-cashout"]', '[data-test="payment-modal__tab-is-cashout"]');
     }
 
 
