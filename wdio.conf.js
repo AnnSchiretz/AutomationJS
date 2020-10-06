@@ -86,6 +86,9 @@ exports.config = {
                 '--no-sandbox',
                 '--disable-dev-shm-usage',
                 '--incognito',
+                '--disable-setuid-sandbox',
+                '--window-size=1920,1080',
+
 
             ],
         }
