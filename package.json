@@ -4,7 +4,7 @@
   "description": "A WebdriverIO & Cucumber Boilerplate based on Page Object Model",
   "scripts": {
     "chrome": "URL_LAND='https://jet-wheel.com/' PROJECT='JET' URL='https://jet.casino/ru'  npx wdio wdio.conf.js --parallel=false",
-    "safari": "URL_LAND='https://jet-wheel.com/' PROJECT='JET' URL='https://jet.casino/ru'  npx wdio ./tests/config/firefox.conf.js",
+    "safari": "URL_LAND='https://jet-wheel.com/' PROJECT='JET' URL='https://jet.casino/ru'  npx wdio tests/config/safari.conf.js",
     "iOSBrowser": "URL_LAND='https://jet-wheel.com/' PROJECT='JET' URL='https://jet.casino/ru'  npx wdio tests/config/iOSBrowser.js",
     "androidBrowser": "URL_LAND='https://jet-wheel.com/' PROJECT='JET' URL='https://jet.casino/ru'  npx wdio tests/config/androidBrowser.config.js",
     "debag": "PROJECT='JET' URL='https://jet.casino/'  npm run iOSBrowser -- --cucumberOpts.tagExpression='@TEST_TST-5025 and @jet'"

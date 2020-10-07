@@ -56,7 +56,9 @@ When(/^Я перезагружаю страницу$/, () => {
 When(/^Я нажимаю "([^"]*)" в окне уведомления$/, (element) => {
 
     const component = browser.pageObjects["Уведомления"].elements[element];
-    if (elementManager.getSize(component) !== 0) {
+    const size = elementManager.getSize(component);
+    console.log(size);
+    if (size !== 0) {
         elementManager.click(component);
     }
 

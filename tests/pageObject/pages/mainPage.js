@@ -1,3 +1,4 @@
+const getSelectors = require('../../helper/getSelector');
 class MainPage {
     constructor() {
         this.elements = {
@@ -51,7 +52,7 @@ class MainPage {
     }
 
     get billetSport() {
-        return ('[data-test="sport_collection"]');
+        return getSelectors('[data-test="sport_collection"]', '//a[@class="section-links__item-inner"][@href="/ru/sport"]', '//a[@class="section-links__item-inner"][@href="/ru/sport"]');
     }
 
     get billetSlot() {

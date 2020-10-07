@@ -8,7 +8,7 @@ config.capabilities = [
         chromeOptions: {'args': ['--incognito', '--disable-cache']},
         maxInstances: 1,
         automationName: 'uiautomator2',
-        deviceName: 'auto',//emulator-5554    ce031713655bc80d0c
+        deviceName: '9B111FFBA002X2',//emulator-5554    ce031713655bc80d0c
         platformVersion: '',
         port: 4723,
         path: '/wd/hub',
