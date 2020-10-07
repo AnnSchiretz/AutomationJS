@@ -87,7 +87,6 @@ exports.config = {
                 '--disable-dev-shm-usage',
                 '--incognito',
                 '--disable-setuid-sandbox',
-                '--window-size=1920,1080',
 
 
             ],
@@ -277,6 +276,11 @@ exports.config = {
 
         browser.elementManager = require('./tests/services/elementManager');
         browser.helper = require('./tests/helper/helper');
+
+
+        if (browser.isMobile === false) {
+            browser.maximizeWindow();
+        }
 
 
     },
