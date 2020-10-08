@@ -282,6 +282,7 @@ exports.config = {
         }
 
 
+
     },
     /**
      * Runs before a WebdriverIO command gets executed.
@@ -306,6 +307,7 @@ exports.config = {
      * beforeEach in Mocha)
      */
     beforeHook: function (test, context) {
+
         if (browser.isMobile === false) {
             browser.maximizeWindow();
         }
@@ -395,6 +397,9 @@ exports.config = {
             console.log('err', err);
         }
 
+        fs.writeFile(`${jsonTmpDirectory}.gitkeep`, '', function (err) {
+            if (err) throw err;
+        });
 
     }
     /**
