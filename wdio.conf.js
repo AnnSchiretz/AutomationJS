@@ -277,7 +277,6 @@ exports.config = {
         browser.elementManager = require('./tests/services/elementManager');
         browser.helper = require('./tests/helper/helper');
 
-
         if (browser.isMobile === false) {
             browser.maximizeWindow();
         }
@@ -306,8 +305,11 @@ exports.config = {
      * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
      * beforeEach in Mocha)
      */
-    // beforeHook: function (test, context) {
-    // },
+    beforeHook: function (test, context) {
+        if (browser.isMobile === false) {
+            browser.maximizeWindow();
+        }
+    },
     /**
      * Hook that gets executed _after_ a hook within the suite starts (e.g. runs after calling
      * afterEach in Mocha)

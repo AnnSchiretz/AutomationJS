@@ -57,7 +57,6 @@ When(/^Я нажимаю "([^"]*)" в окне уведомления$/, (elemen
 
     const component = browser.pageObjects["Уведомления"].elements[element];
     const size = elementManager.getSize(component);
-    console.log(size);
     if (size !== 0) {
         elementManager.click(component);
     }
