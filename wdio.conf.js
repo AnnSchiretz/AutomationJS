@@ -397,6 +397,9 @@ exports.config = {
             console.log('err', err);
         }
 
+        fs.writeFile(`${jsonTmpDirectory}.gitkeep`, '', function (err) {
+            if (err) throw err;
+        });
 
     }
     /**
