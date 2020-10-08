@@ -56,7 +56,21 @@ When(/^Я перезагружаю страницу$/, () => {
 When(/^Я нажимаю "([^"]*)" в окне уведомления$/, (element) => {
 
     const component = browser.pageObjects["Уведомления"].elements[element];
-    if (elementManager.getSize(component) !== 0) {
+
+    if (browser.isIOS) {
+
+    } else {
+        if (elementManager.getSize(component) !== 0) {
+            elementManager.click(component);
+        }
+    }
+
+});
+
+// Тест - спорт
+When(/^Я выбираю "([^"]*)" на "([^"]*)"$/, (element, page) => {
+    const component = browser.pageObjects[page].elements[element];
+    if (elementManager.isExisting(component)) {
         elementManager.click(component);
     }
 
