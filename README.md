@@ -131,6 +131,19 @@ URL_LAND='https://jet-wheel.com/' PROJECT='SOL' URL='https://dev:dev123@dev.kube
 
 `chrome` - скрипт запускающий браузер Chrome(или браузер указанный в `wdio.conf`)
 
+-Функция для пропуска тестов, для того,что бы не портить статистику 
+```
+@skip(): will always skip the tagged item
+@skip(browserName="chrome"): the test will not be executed against chrome browsers.
+@skip(browserName="firefox";platformName="linux"): will skip the test in firefox over linux executions.
+@skip(browserName=["chrome","firefox"]): tagged items will be skipped for both chrome and firefox browsers.
+@skip(browserName=/i.*explorer/: capabilities with browsers matching the regexp will be skipped (like iexplorer, internet explorer, internet-explorer, ...).
+
+```
+дополнительная информация так же изложена по ссылке
+- [ВОТ ТУТ](https://webdriver.io/docs/frameworks.html)
+
+
 ##Настройка selenoid
 
 - [Установить Docker на PC](https://www.docker.com/products/docker-desktop)

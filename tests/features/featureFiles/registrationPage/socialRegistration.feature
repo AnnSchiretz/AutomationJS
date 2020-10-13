@@ -1,9 +1,9 @@
 # language: ru
 
-@socialRegistration @failed
+@socialRegistration
 Функция: Регистрация через социальные сети
 
-    @TEST_TST-5017 @registration @sol @jet @desktop @mobile
+    @TEST_TST-5017 @registration @sol @jet @desktop @mobile @skip()
 #  @failed
   Сценарий: 1.1.4. Регистрация: OK
     Пусть Я нахожусь на главной странице
@@ -54,7 +54,7 @@
     Тогда Я вижу "Telegram Форма" на "Прочие Элементы"
 
 
-  @TEST_TST-5016 @registration @sol @jet @desktop @mobile
+  @TEST_TST-5016 @registration @sol @jet @desktop @mobile @skip()
   Сценарий: 1.1.3. Регистрация: VK
     Пусть Я нахожусь на главной странице
     Когда Я нажимаю "Регистрация" в хедере

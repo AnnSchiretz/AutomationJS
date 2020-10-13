@@ -77,11 +77,11 @@ class RegistrationAuthorizationForm {
     }
 
     get registrationMailRU() {
-        return ('[data-test="register_mailRu"]');
+        return ('[data-test="register_mailru"]');
     }
 
     get registrationGooglePlus() {
-        return ('[data-test="register_googleplus"]');
+        return ('[data-test="register_google_oauth2"]');
     }
 
     get registrationYandex() {
